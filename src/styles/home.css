@@ -2192,3 +2192,59 @@ body.high-contrast .nav-btn-login { background: #111; color: #c084fc; border-col
 body.high-contrast .nav-btn-login:hover { background: #2a1a3a; color: #d8b4fe; }
 body.high-contrast .nav-btn-register { background: #c084fc; color: #000; box-shadow: none; }
 body.high-contrast .nav-btn-register:hover { background: #d8b4fe; color: #000; }
+
+/* Lucide icons inherit color, but the FA <i> tags were inline-block.
+   Keep the spacing consistent for icon+label buttons. */
+.btn svg,
+.access-actions .btn svg,
+.hero-badge svg,
+.visual-header svg,
+.visual-list svg,
+.opportunity-meta svg,
+.opportunity-employer svg,
+.opportunity-deadline svg,
+.section-head h2 svg {
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.visual-header,
+.section-head h2 {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.opportunity-meta span,
+.opportunity-employer,
+.opportunity-deadline {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.visual-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Lucide spin animation for the loading skeleton */
+.lucide-spin {
+  animation: lucide-spin 1s linear infinite;
+}
+@keyframes lucide-spin {
+  to { transform: rotate(360deg); }
+}

@@ -1,14 +1,29 @@
 import { useState, useMemo, useEffect, useRef, useCallback } from "react";
+import {
+  AlertTriangle,
+  ArrowRight,
+  Building2,
+  ChevronDown,
+  ChevronLeft,
+  ChevronRight,
+  Clock,
+  GraduationCap,
+  LayoutGrid,
+  Laptop,
+  List,
+  MapPin,
+  Search,
+  SlidersHorizontal,
+  X,
+  XCircle,
+} from "lucide-react";
 import TopBar from "../components/layout/TopBar.jsx";
 import BrandRow from "../components/layout/BrandRow.jsx";
 import MainNav from "../components/layout/MainNav.jsx";
 import Footer from "../components/layout/Footer.jsx";
 import OpportunityDrawer from "../components/opportunities/OpportunityDrawer.jsx";
 import { api, errorMessage } from "../api/client";
-import {
-  KENYA_COUNTIES,
-  OPPORTUNITY_TYPES,
-} from "../lib/constants";
+import { KENYA_COUNTIES, OPPORTUNITY_TYPES } from "../lib/constants";
 import "../styles/home.css";
 import "../styles/opportunities-new.css";
 
@@ -18,7 +33,6 @@ import "../styles/opportunities-new.css";
 
 const ITEMS_PER_PAGE = 6;
 
-// OPPORTUNITY_TYPES is expected as [[code, label], ...].
 const TYPE_LABELS = Object.fromEntries(OPPORTUNITY_TYPES);
 
 const DURATION_OPTIONS = [
@@ -40,7 +54,6 @@ const COMPENSATION_OPTIONS = [
   { value: "UNPAID", label: "Unpaid" },
 ];
 
-// Only orderings the backend allows. Keeps a rogue option from 400-ing.
 const SAFE_ORDERINGS = new Set([
   "-created_at",
   "created_at",
@@ -57,8 +70,6 @@ const SORT_OPTIONS = [
   { value: "-start_date", label: "Start date (latest)" },
 ];
 
-// Deadline buckets. `urgent` is enforced server-side (`closing_soon=true`);
-// `week` and `month` are refined client-side.
 const DEADLINE_BUCKETS = [
   { key: "urgent", label: "Closing in 72 hours" },
   { key: "week", label: "Closing this week" },
@@ -101,9 +112,6 @@ const getLogoColor = (str = "") => {
   return colors[Math.abs(hash) % colors.length];
 };
 
-// Convert a backend OpportunityList / OpportunityDetail payload into the
-// shape this page's card renderer expects. Only reads fields that actually
-// exist on `apps/opportunities/models.py` (via the serializer).
 function toCardModel(opp) {
   if (!opp || typeof opp !== "object") return null;
   const id = toId(opp.id);
@@ -118,8 +126,6 @@ function toCardModel(opp) {
   const type = opp.type || "OTHER";
   const compensation = opp.compensation || "UNPAID";
 
-  // First skill for the qualification chip. Backend exposes `skills` as a
-  // flat string (comma-separated) on the list serializer.
   const firstSkill =
     Array.isArray(opp.skills)
       ? opp.skills[0]
@@ -127,14 +133,12 @@ function toCardModel(opp) {
         ? opp.skills.split(",")[0]?.trim()
         : "";
 
-  // Duration in weeks, computed from the model's duration_value/unit.
   const durUnit = opp.duration_unit;
   const durVal = Number(opp.duration_value || 0);
   let durationWeeks = null;
   if (durUnit === "WEEKS") durationWeeks = durVal;
   else if (durUnit === "MONTHS") durationWeeks = Math.round(durVal * 4);
 
-  // Compensation display: prefer the backend label if present.
   const compensationLabel =
     opp.compensation_display ||
     (compensation === "STIPEND"
@@ -171,9 +175,8 @@ function toCardModel(opp) {
 }
 
 // ---------------------------------------------------------------------------
-// MultiSelect (inlined, page-specific)
+// MultiSelect (inlined)
 // ---------------------------------------------------------------------------
-
 function MultiSelect({
   label,
   options,
@@ -213,13 +216,13 @@ function MultiSelect({
       >
         <span className="ms-label">{label}</span>
         {selected.length > 0 && <span className="ms-badge">{selected.length}</span>}
-        <i className="fas fa-chevron-down ms-caret"></i>
+        <ChevronDown size={13} strokeWidth={2.5} className="ms-caret" />
       </button>
 
       {open && (
         <div className="ms-dropdown">
           <div className="ms-search">
-            <i className="fas fa-search"></i>
+            <Search size={13} strokeWidth={2.5} />
             <input
               type="text"
               placeholder={placeholder}
@@ -261,7 +264,6 @@ function MultiSelect({
 // ---------------------------------------------------------------------------
 // Active chips builder
 // ---------------------------------------------------------------------------
-
 function buildChips({
   search,
   selectedTypes,
@@ -277,9 +279,9 @@ function buildChips({
   if (search) {
     chips.push(
       <span key="search" className="active-chip">
-        <i className="fas fa-search"></i> “{search}”
+        <Search size={11} strokeWidth={2.75} /> “{search}”
         <button onClick={() => onRemove("search")} aria-label="Remove search">
-          <i className="fas fa-times"></i>
+          <X size={11} strokeWidth={3} />
         </button>
       </span>
     );
@@ -291,7 +293,7 @@ function buildChips({
       <span key={`type-${val}`} className="active-chip">
         {label}
         <button onClick={() => onRemove("type", val)} aria-label={`Remove ${label}`}>
-          <i className="fas fa-times"></i>
+          <X size={11} strokeWidth={3} />
         </button>
       </span>
     );
@@ -302,7 +304,7 @@ function buildChips({
       <span key={`county-${val}`} className="active-chip">
         {val}
         <button onClick={() => onRemove("county", val)} aria-label={`Remove ${val}`}>
-          <i className="fas fa-times"></i>
+          <X size={11} strokeWidth={3} />
         </button>
       </span>
     );
@@ -315,7 +317,7 @@ function buildChips({
       <span key={`dur-${val}`} className="active-chip">
         {label}
         <button onClick={() => onRemove("duration", val)} aria-label={`Remove ${label}`}>
-          <i className="fas fa-times"></i>
+          <X size={11} strokeWidth={3} />
         </button>
       </span>
     );
@@ -328,7 +330,7 @@ function buildChips({
       <span key={`mode-${val}`} className="active-chip">
         {label}
         <button onClick={() => onRemove("work_mode", val)} aria-label={`Remove ${label}`}>
-          <i className="fas fa-times"></i>
+          <X size={11} strokeWidth={3} />
         </button>
       </span>
     );
@@ -341,7 +343,7 @@ function buildChips({
       <span key={`comp-${val}`} className="active-chip">
         {label}
         <button onClick={() => onRemove("compensation", val)} aria-label={`Remove ${label}`}>
-          <i className="fas fa-times"></i>
+          <X size={11} strokeWidth={3} />
         </button>
       </span>
     );
@@ -354,7 +356,7 @@ function buildChips({
       <span key={`deadline-${val}`} className="active-chip">
         {label}
         <button onClick={() => onRemove("deadline", val)} aria-label={`Remove ${label}`}>
-          <i className="fas fa-times"></i>
+          <X size={11} strokeWidth={3} />
         </button>
       </span>
     );
@@ -366,13 +368,10 @@ function buildChips({
 // ---------------------------------------------------------------------------
 // Page
 // ---------------------------------------------------------------------------
-
 export default function OpportunitiesPage() {
-  // ---- Filter state ----
   const [searchInput, setSearchInput] = useState("");
   const [search, setSearch] = useState("");
 
-  // Server-side filters
   const [selectedTypes, setSelectedTypes] = useState([]);
   const [selectedCounties, setSelectedCounties] = useState([]);
   const [selectedDurations, setSelectedDurations] = useState([]);
@@ -381,10 +380,8 @@ export default function OpportunitiesPage() {
   const [sort, setSort] = useState("-created_at");
   const [page, setPage] = useState(1);
 
-  // Client-side-only filters
   const [deadlines, setDeadlines] = useState(new Set());
 
-  // ---- View / data state ----
   const [view, setView] = useState("list");
   const [items, setItems] = useState([]);
   const [total, setTotal] = useState(0);
@@ -392,7 +389,6 @@ export default function OpportunitiesPage() {
   const [error, setError] = useState("");
   const [activeOpp, setActiveOpp] = useState(null);
 
-  // Reset page on any filter change
   useEffect(() => {
     setPage(1);
   }, [
@@ -406,7 +402,6 @@ export default function OpportunitiesPage() {
     sort,
   ]);
 
-  // ---- Build API query (1:1 with OpenAPI spec) ----
   const query = useMemo(() => {
     const params = {
       status: "ACTIVE",
@@ -422,8 +417,6 @@ export default function OpportunitiesPage() {
     if (selectedWorkModes.length) params.work_mode = selectedWorkModes;
     if (selectedCompensations.length) params.compensation = selectedCompensations;
 
-    // Send the LARGEST selected duration bucket to the API; refine
-    // client-side against the exact bucket the trainee picked.
     if (selectedDurations.length) {
       const maxWeeks = Math.max(
         ...selectedDurations.map(
@@ -433,7 +426,6 @@ export default function OpportunitiesPage() {
       if (maxWeeks > 0) params.max_duration_weeks = maxWeeks;
     }
 
-    // `urgent` (72h) is enforced by the API.
     if (deadlines.has("urgent")) params.closing_soon = true;
 
     return params;
@@ -449,9 +441,6 @@ export default function OpportunitiesPage() {
     page,
   ]);
 
-  // ---- Fetch ----
-  // Note: no `skipAuth`. The API is public, but sending the JWT when present
-  // lets the backend hydrate per-user fields (`has_applied`, `is_saved`).
   const fetchRef = useRef(0);
   const load = useCallback(
     async (signal) => {
@@ -492,7 +481,6 @@ export default function OpportunitiesPage() {
     return () => controller.abort();
   }, [load]);
 
-  // ---- Client-side refinement (deadline buckets, exact duration) ----
   const visibleItems = useMemo(() => {
     const now = Date.now();
     const oneDay = 86400000;
@@ -503,8 +491,6 @@ export default function OpportunitiesPage() {
       const d = new Date(opp.deadline + "T23:59:59").getTime();
       const diff = d - now;
 
-      // Urgent is also enforced server-side; keep the client check as a
-      // safety net when only week/month are selected.
       if (deadlines.has("urgent") && diff <= 3 * oneDay && diff >= 0) return true;
       if (deadlines.has("week") && diff <= 7 * oneDay && diff >= 0) return true;
       if (deadlines.has("month") && diff <= 31 * oneDay && diff >= 0) return true;
@@ -513,7 +499,7 @@ export default function OpportunitiesPage() {
 
     const passesDuration = (opp) => {
       if (!selectedDurations.length) return true;
-      if (opp.durationWeeks == null) return true; // don't hide if unknown
+      if (opp.durationWeeks == null) return true;
       return selectedDurations.some((k) => {
         const opt = DURATION_OPTIONS.find((d) => d.key === k);
         return opt ? opp.durationWeeks <= opt.weeks : true;
@@ -525,7 +511,6 @@ export default function OpportunitiesPage() {
 
   const totalPages = Math.max(1, Math.ceil(total / ITEMS_PER_PAGE));
 
-  // ---- Handlers ----
   const toggleDeadline = (key) =>
     setDeadlines((s) => {
       const next = new Set(s);
@@ -588,9 +573,6 @@ export default function OpportunitiesPage() {
     deadlines.size +
     (search ? 1 : 0);
 
-  // ---- Drawer hydration ----
-  // Also re-fetch without `skipAuth` so detail-only fields (`has_applied`,
-  // `is_saved`, full `description`, `skills_gained`) load.
   const openDrawer = useCallback(async (opp) => {
     const id = toId(opp?.id);
     if (id === null) {
@@ -632,9 +614,12 @@ export default function OpportunitiesPage() {
             </p>
           </div>
 
+          {/* Search bar — the button now sits INSIDE the pill, right-aligned, square */}
           <div className="hero-search-bar">
             <div className="search-input-group">
-              <i className="fas fa-search"></i>
+              <span className="search-icon-chip">
+                <Search size={16} strokeWidth={2.5} />
+              </span>
               <input
                 type="text"
                 value={searchInput}
@@ -645,7 +630,7 @@ export default function OpportunitiesPage() {
                     setSearch(searchInput);
                   }
                 }}
-                placeholder="Search by role, employer, or keyword..."
+                placeholder="Search by role, employer, or keyword…"
               />
               {searchInput && (
                 <button
@@ -656,16 +641,19 @@ export default function OpportunitiesPage() {
                   }}
                   aria-label="Clear search"
                 >
-                  <i className="fas fa-times-circle"></i>
+                  <XCircle size={18} strokeWidth={2} />
                 </button>
               )}
+              <button
+                className="search-btn"
+                onClick={() => setSearch(searchInput)}
+                aria-label="Search"
+                title="Search"
+                type="button"
+              >
+                <Search size={16} strokeWidth={2.5} />
+              </button>
             </div>
-            <button
-              className="btn btn-primary search-btn"
-              onClick={() => setSearch(searchInput)}
-            >
-              Search
-            </button>
           </div>
         </div>
       </header>
@@ -676,7 +664,7 @@ export default function OpportunitiesPage() {
             <aside className="filter-sidebar">
               <div className="filter-sidebar-header">
                 <h3>
-                  <i className="fas fa-sliders-h"></i> Filters
+                  <SlidersHorizontal size={15} strokeWidth={2.5} /> Filters
                 </h3>
                 {activeFilterCount > 0 && (
                   <button className="filter-reset" onClick={clearFilters}>
@@ -692,7 +680,7 @@ export default function OpportunitiesPage() {
                   options={OPPORTUNITY_TYPES}
                   selected={selectedTypes}
                   onChange={setSelectedTypes}
-                  placeholder="Search types..."
+                  placeholder="Search types…"
                   getValue={(o) => o[0]}
                   getLabel={(o) => o[1]}
                 />
@@ -705,7 +693,7 @@ export default function OpportunitiesPage() {
                   options={KENYA_COUNTIES}
                   selected={selectedCounties}
                   onChange={setSelectedCounties}
-                  placeholder="Search counties..."
+                  placeholder="Search counties…"
                 />
               </div>
 
@@ -716,7 +704,7 @@ export default function OpportunitiesPage() {
                   options={WORK_MODES}
                   selected={selectedWorkModes}
                   onChange={setSelectedWorkModes}
-                  placeholder="Search work modes..."
+                  placeholder="Search work modes…"
                   getValue={(o) => o.value}
                   getLabel={(o) => o.label}
                 />
@@ -729,7 +717,7 @@ export default function OpportunitiesPage() {
                   options={COMPENSATION_OPTIONS}
                   selected={selectedCompensations}
                   onChange={setSelectedCompensations}
-                  placeholder="Search compensation..."
+                  placeholder="Search compensation…"
                   getValue={(o) => o.value}
                   getLabel={(o) => o.label}
                 />
@@ -742,7 +730,7 @@ export default function OpportunitiesPage() {
                   options={DURATION_OPTIONS}
                   selected={selectedDurations}
                   onChange={setSelectedDurations}
-                  placeholder="Search durations..."
+                  placeholder="Search durations…"
                   getValue={(o) => o.key}
                   getLabel={(o) => o.label}
                 />
@@ -794,14 +782,14 @@ export default function OpportunitiesPage() {
                       onClick={() => setView("list")}
                       aria-label="List view"
                     >
-                      <i className="fas fa-list"></i>
+                      <List size={15} strokeWidth={2.5} />
                     </button>
                     <button
                       className={view === "grid" ? "active" : ""}
                       onClick={() => setView("grid")}
                       aria-label="Grid view"
                     >
-                      <i className="fas fa-th-large"></i>
+                      <LayoutGrid size={15} strokeWidth={2.5} />
                     </button>
                   </div>
                 </div>
@@ -848,7 +836,7 @@ export default function OpportunitiesPage() {
               {!loading && error && (
                 <div className="empty-state">
                   <div className="empty-icon-wrapper">
-                    <i className="fas fa-exclamation-triangle"></i>
+                    <AlertTriangle size={32} strokeWidth={2} />
                   </div>
                   <h3>Could not load opportunities</h3>
                   <p>{error}</p>
@@ -861,7 +849,7 @@ export default function OpportunitiesPage() {
               {!loading && !error && visibleItems.length === 0 && (
                 <div className="empty-state">
                   <div className="empty-icon-wrapper">
-                    <i className="fas fa-search"></i>
+                    <Search size={32} strokeWidth={2} />
                   </div>
                   <h3>No opportunities found</h3>
                   <p>
@@ -909,25 +897,25 @@ export default function OpportunitiesPage() {
                             </span>
                           </div>
                           <p className="job-company">
-                            <i className="fas fa-building"></i> {opp.employer}
+                            <Building2 size={13} strokeWidth={2.25} /> {opp.employer}
                           </p>
 
                           <div className="job-meta">
                             <span>
-                              <i className="fas fa-map-marker-alt"></i> {opp.county}
+                              <MapPin size={13} strokeWidth={2.25} /> {opp.county}
                             </span>
                             <span>
-                              <i className="fas fa-clock"></i> {opp.durationLabel}
+                              <Clock size={13} strokeWidth={2.25} /> {opp.durationLabel}
                             </span>
                             {opp.workMode && (
                               <span>
-                                <i className="fas fa-laptop-house"></i>{" "}
+                                <Laptop size={13} strokeWidth={2.25} />{" "}
                                 {WORK_MODES.find((m) => m.value === opp.workMode)?.label ||
                                   opp.workMode}
                               </span>
                             )}
                             <span>
-                              <i className="fas fa-graduation-cap"></i>{" "}
+                              <GraduationCap size={13} strokeWidth={2.25} />{" "}
                               {opp.qualification}
                             </span>
                           </div>
@@ -944,7 +932,7 @@ export default function OpportunitiesPage() {
                             )}
                           </div>
                           <div className="job-deadline">
-                            <i className="far fa-clock"></i> Closes{" "}
+                            <Clock size={12} strokeWidth={2.5} /> Closes{" "}
                             {opp.deadline
                               ? new Date(opp.deadline).toLocaleDateString("en-GB", {
                                   day: "numeric",
@@ -959,7 +947,7 @@ export default function OpportunitiesPage() {
                               openDrawer(opp);
                             }}
                           >
-                            View <i className="fas fa-arrow-right"></i>
+                            View <ArrowRight size={13} strokeWidth={2.5} />
                           </button>
                         </div>
                       </div>
@@ -973,7 +961,7 @@ export default function OpportunitiesPage() {
                         disabled={page === 1 || loading}
                         onClick={() => setPage((p) => Math.max(1, p - 1))}
                       >
-                        <i className="fas fa-chevron-left"></i>
+                        <ChevronLeft size={16} strokeWidth={2.5} />
                       </button>
                       <span className="page-info">
                         Page <strong>{page}</strong> of {totalPages}
@@ -983,7 +971,7 @@ export default function OpportunitiesPage() {
                         disabled={page === totalPages || loading}
                         onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
                       >
-                        <i className="fas fa-chevron-right"></i>
+                        <ChevronRight size={16} strokeWidth={2.5} />
                       </button>
                     </div>
                   )}

@@ -1,5 +1,6 @@
 // src/components/home/Hero.jsx
 import { Link } from 'react-router-dom'
+import { CheckCircle2, Link2, Route, Zap } from 'lucide-react'
 import { heroStats, visualList } from '../../data/homeData.js'
 
 export default function Hero({ onFindPlacement }) {
@@ -8,7 +9,8 @@ export default function Hero({ onFindPlacement }) {
       <div className="container hero-grid">
         <div>
           <span className="hero-badge">
-            <i className="fas fa-link" aria-hidden="true"></i> Connecting training to employment
+            <Link2 size={14} strokeWidth={2.5} aria-hidden="true" />
+            Connecting training to employment
           </span>
           <h1>
             Where skills meet <span>opportunity</span>.
@@ -18,24 +20,22 @@ export default function Hero({ onFindPlacement }) {
             apprenticeship and dual-training placements - bridging TVET trainees, verified
             employers and training institutions across Kenya.
           </p>
-         
-         
         </div>
         <div className="hero-visual">
           <div className="visual-header">
-            <i className="fas fa-bolt" aria-hidden="true"></i>
+            <Zap size={18} strokeWidth={2.5} aria-hidden="true" />
             <h3>Placement lifecycle</h3>
           </div>
           <ul className="visual-list">
             {visualList.map((item) => (
               <li key={item}>
-                <i className="fas fa-check-circle" aria-hidden="true"></i> {item}
+                <CheckCircle2 size={14} strokeWidth={2.5} aria-hidden="true" /> {item}
               </li>
             ))}
           </ul>
           <div className="visual-cta">
             <Link to="/opportunities" className="btn btn-outline-light">
-              <i className="fas fa-route" aria-hidden="true"></i> Explore opportunities
+              <Route size={16} strokeWidth={2.5} aria-hidden="true" /> Explore opportunities
             </Link>
           </div>
         </div>

@@ -1,5 +1,6 @@
 // src/components/home/CTASection.jsx
 import { Link } from 'react-router-dom'
+import { Briefcase, GraduationCap } from 'lucide-react'
 
 export default function CTASection() {
   return (
@@ -15,10 +16,10 @@ export default function CTASection() {
           </div>
           <div className="cta-buttons">
             <Link to="/register" className="btn btn-light">
-              <i className="fas fa-user-graduate" aria-hidden="true"></i> Join as trainee
+              <GraduationCap size={16} strokeWidth={2.5} aria-hidden="true" /> Join as trainee
             </Link>
             <Link to="/register" className="btn btn-outline-light">
-              <i className="fas fa-briefcase" aria-hidden="true"></i> Join as employer
+              <Briefcase size={16} strokeWidth={2.5} aria-hidden="true" /> Join as employer
             </Link>
           </div>
         </div>

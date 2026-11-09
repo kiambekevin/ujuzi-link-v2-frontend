@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import AccessibilityPopup from './AccessibilityPopup.jsx'
-import ujuziLogo from '../../assets/images/ujuzink.png';
+import ujuziLogo from '../../assets/images/molsp-ujuzi-link.png';
 
 export default function BrandRow({ onSearchClick }) {
   const [a11yOpen, setA11yOpen] = useState(false)
@@ -54,7 +54,7 @@ export default function BrandRow({ onSearchClick }) {
       <div className="container">
         <div className="logo">
           <div>
-            <img src={ujuziLogo} width="75" height="75" alt="Ujuzi Link logo" />
+            <img src={ujuziLogo} width="250" height="75" alt="Ujuzi Link logo" />
           </div>
           <div className="logo-text">
             Ujuzi Link

@@ -26,13 +26,10 @@ export default function HomePage() {
       <MainNav />
       <Hero onFindPlacement={() => setSearchOpen(true)} />
       <FeaturedOpportunities />
-      <Objectives />
-      <StakeholderEcosystem /> 
       <PlacementProcess />
-      <PlatformAccess />
       <CTASection />
       <Footer />
       <SearchModal isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
     </>
   )
-}
+} 

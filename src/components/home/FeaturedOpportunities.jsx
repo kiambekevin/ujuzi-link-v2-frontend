@@ -1,18 +1,41 @@
 // src/components/home/FeaturedOpportunities.jsx
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
+import {
+  ArrowRight,
+  Award,
+  Briefcase,
+  Building2,
+  Clock,
+  Factory,
+  Gavel,
+  GraduationCap,
+  HandHeart,
+  HeartHandshake,
+  Hourglass,
+  Inbox,
+  Loader2,
+  Lock,
+  LogIn,
+  MapPin,
+  RotateCw,
+  Star,
+  TriangleAlert,
+  UserCheck,
+  UserPlus,
+} from "lucide-react";
 import { api, errorMessage, getAccess } from "../../api/client";
 
 const TYPE_ICONS = {
-  APPRENTICESHIP: "fa-user-graduation-cap",
-  INTERNSHIP: "fa-briefcase",
-  INDUSTRIAL_ATTACHMENT: "fa-industry",
-  PUPILLAGE: "fa-gavel",
-  COMMUNITY_SERVICE: "fa-hands-helping",
-  VOLUNTEER: "fa-hand-holding-heart",
-  INDUSTRY_VISIT: "fa-building",
-  JOB_SHADOWING: "fa-user-tie",
-  OTHER: "fa-certificate",
+  APPRENTICESHIP: GraduationCap,
+  INTERNSHIP: Briefcase,
+  INDUSTRIAL_ATTACHMENT: Factory,
+  PUPILLAGE: Gavel,
+  COMMUNITY_SERVICE: HandHeart,
+  VOLUNTEER: HeartHandshake,
+  INDUSTRY_VISIT: Building2,
+  JOB_SHADOWING: UserCheck,
+  OTHER: Award,
 };
 
 const TYPE_LABELS = {
@@ -70,24 +93,16 @@ function fmtDuration(opp) {
   return `${opp.duration_value} ${unit}`;
 }
 
-// `skills` comes from OpportunityListSerializer.get_skills as a LIST.
-// Tolerate a comma-separated string too, in case the serializer changes.
 function normaliseSkills(skills) {
   if (Array.isArray(skills)) return skills.filter(Boolean);
   if (typeof skills === "string") {
-    return skills
-      .split(",")
-      .map((s) => s.trim())
-      .filter(Boolean);
+    return skills.split(",").map((s) => s.trim()).filter(Boolean);
   }
   return [];
 }
 
 function toCardModel(opp) {
   const skillList = normaliseSkills(opp.skills);
-
-  // `organization` is a dict { id, name, verified, org_type } from the
-  // serializer - but tolerate a plain string just in case.
   const employer =
     (typeof opp.organization === "string" && opp.organization) ||
     opp.organization?.name ||
@@ -105,17 +120,12 @@ function toCardModel(opp) {
       : "Open",
     type: opp.type,
     typeLabel: opp.type_display || TYPE_LABELS[opp.type] || opp.type,
-    icon: TYPE_ICONS[opp.type] || "fa-certificate",
+    icon: TYPE_ICONS[opp.type] || Award,
     typeClass: TYPE_CLASS[opp.type] || "other",
     isOpen: opp.is_open !== false,
   };
 }
 
-/**
- * Try the authed client first (richer payload), falling back to an
- * anonymous request if the user isn't signed in or the backend rejects
- * with 401/403.
- */
 async function fetchFeatured(signal) {
   const params = new URLSearchParams({
     status: "ACTIVE",
@@ -124,7 +134,6 @@ async function fetchFeatured(signal) {
   });
   const path = `/opportunities/?${params.toString()}`;
 
-  // 1. Authenticated attempt - only if a token exists.
   if (typeof getAccess === "function" && getAccess()) {
     try {
       const { data } = await api.get(path, { signal });
@@ -135,8 +144,6 @@ async function fetchFeatured(signal) {
     }
   }
 
-  // 2. Anonymous attempt via the api client with `skipAuth` - avoids
-  //    duplicating base-url / interceptor logic.
   if (typeof api.get === "function") {
     try {
       const { data } = await api.get(path, { signal, skipAuth: true });
@@ -144,11 +151,9 @@ async function fetchFeatured(signal) {
     } catch (err) {
       const status = err?.response?.status;
       if (status !== 401 && status !== 403) throw err;
-      // Otherwise fall through to fetch().
     }
   }
 
-  // 3. Last-resort plain fetch with no auth header.
   const res = await fetch(`${API_BASE}${path}`, {
     method: "GET",
     credentials: "omit",
@@ -215,9 +220,9 @@ export default function FeaturedOpportunities() {
       <div className="container">
         <div className="section-head">
           <div>
-            <div className="section-label">Featured</div>
+            
             <h2>
-              <i className="fas fa-star" aria-hidden="true"></i> Featured
+              <Star size={20} strokeWidth={2.5} aria-hidden="true" /> Featured
               opportunities
             </h2>
             <p>
@@ -229,18 +234,18 @@ export default function FeaturedOpportunities() {
             className="btn btn-outline"
             style={{ padding: "0.65rem 1.3rem", fontSize: "0.85rem" }}
           >
-            View all opportunities <i className="fas fa-arrow-right"></i>
+            View all opportunities <ArrowRight size={14} strokeWidth={2.5} />
           </Link>
         </div>
 
-        {/* -------- Loading skeletons -------- */}
+        {/* Loading skeletons */}
         {loading && (
           <div className="featured-grid">
             {Array.from({ length: 3 }).map((_, i) => (
               <div className="opportunity-card" key={i} aria-hidden="true">
                 <div className="opportunity-header">
                   <div className="opportunity-logo" style={{ opacity: 0.4 }}>
-                    <i className="fas fa-circle-notch fa-spin"></i>
+                    <Loader2 size={18} strokeWidth={2.5} className="lucide-spin" />
                   </div>
                 </div>
                 <div className="opportunity-body">
@@ -269,7 +274,7 @@ export default function FeaturedOpportunities() {
           </div>
         )}
 
-        {/* -------- Auth required -------- */}
+        {/* Auth required */}
         {!loading && needsAuth && (
           <div
             className="card"
@@ -289,7 +294,7 @@ export default function FeaturedOpportunities() {
                 fontSize: "1.2rem",
               }}
             >
-              <i className="fas fa-lock" />
+              <Lock size={22} strokeWidth={2.25} />
             </div>
             <h3 style={{ marginBottom: 6, fontSize: "1.15rem" }}>
               Sign in to view opportunities
@@ -308,20 +313,20 @@ export default function FeaturedOpportunities() {
               }}
             >
               <Link to="/login" className="btn btn-primary">
-                <i className="fas fa-sign-in-alt" /> Sign in
+                <LogIn size={15} strokeWidth={2.5} /> Sign in
               </Link>
               <Link to="/register" className="btn btn-outline">
-                <i className="fas fa-user-plus" /> Create account
+                <UserPlus size={15} strokeWidth={2.5} /> Create account
               </Link>
             </div>
           </div>
         )}
 
-        {/* -------- Error -------- */}
+        {/* Error */}
         {!loading && !needsAuth && error && (
           <div className="card" style={{ padding: 20, textAlign: "center" }}>
             <p className="muted small">
-              <i className="fas fa-exclamation-triangle" /> {error}
+              <TriangleAlert size={14} strokeWidth={2.5} /> {error}
             </p>
             <button
               type="button"
@@ -346,66 +351,69 @@ export default function FeaturedOpportunities() {
                   .finally(() => setLoading(false));
               }}
             >
-              <i className="fas fa-rotate-right" /> Retry
+              <RotateCw size={13} strokeWidth={2.5} /> Retry
             </button>
           </div>
         )}
 
-        {/* -------- Empty -------- */}
+        {/* Empty */}
         {!loading && !needsAuth && !error && cards.length === 0 && (
           <div className="card" style={{ padding: 24, textAlign: "center" }}>
             <p className="muted small">
-              <i className="fas fa-inbox" /> No featured opportunities right
+              <Inbox size={14} strokeWidth={2.5} /> No featured opportunities right
               now. Check back soon or{" "}
               <Link to="/opportunities">browse all openings</Link>.
             </p>
           </div>
         )}
 
-        {/* -------- Cards -------- */}
+        {/* Cards */}
         {!loading && !needsAuth && !error && cards.length > 0 && (
           <div className="featured-grid">
-            {cards.map((opp) => (
-              <div className="opportunity-card" key={opp.id}>
-                <div className="opportunity-header">
-                  <div className="opportunity-logo">
-                    <i className={`fas ${opp.icon}`}></i>
-                  </div>
-                  <span className={`opportunity-type ${opp.typeClass}`}>
-                    {opp.typeLabel}
-                  </span>
-                </div>
-                <div className="opportunity-body">
-                  <h4>{opp.title}</h4>
-                  <div className="opportunity-employer">
-                    <i className="fas fa-building"></i> {opp.employer}
-                  </div>
-                  <div className="opportunity-meta">
-                    <span>
-                      <i className="fas fa-map-marker-alt"></i> {opp.location}
-                    </span>
-                    <span>
-                      <i className="fas fa-clock"></i> {opp.duration}
-                    </span>
-                    <span>
-                      <i className="fas fa-graduation-cap"></i>{" "}
-                      {opp.qualification}
+            {cards.map((opp) => {
+              const Icon = opp.icon;
+              return (
+                <div className="opportunity-card" key={opp.id}>
+                  <div className="opportunity-header">
+                    <div className="opportunity-logo">
+                      <Icon size={20} strokeWidth={2.25} />
+                    </div>
+                    <span className={`opportunity-type ${opp.typeClass}`}>
+                      {opp.typeLabel}
                     </span>
                   </div>
+                  <div className="opportunity-body">
+                    <h4>{opp.title}</h4>
+                    <div className="opportunity-employer">
+                      <Building2 size={13} strokeWidth={2.25} /> {opp.employer}
+                    </div>
+                    <div className="opportunity-meta">
+                      <span>
+                        <MapPin size={13} strokeWidth={2.25} /> {opp.location}
+                      </span>
+                      <span>
+                        <Clock size={13} strokeWidth={2.25} /> {opp.duration}
+                      </span>
+                      <span>
+                        <GraduationCap size={13} strokeWidth={2.25} />{" "}
+                        {opp.qualification}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="opportunity-footer">
+                    <span className="opportunity-deadline">
+                      <Hourglass size={13} strokeWidth={2.25} /> {opp.deadline}
+                    </span>
+                    <Link
+                      to={`/opportunities/${opp.id}`}
+                      className="btn btn-primary"
+                    >
+                      {opp.isOpen ? "Apply" : "View"}
+                    </Link>
+                  </div>
                 </div>
-                <div className="opportunity-footer">
-                  <span className="opportunity-deadline">
-                    <i className="fas fa-hourglass-half"></i> {opp.deadline}
-                  </span>
-                  <Link
-                    to={`/opportunities/${opp.id}`}
-                    className="btn btn-primary"
-                  >
-                    {opp.isOpen ? "Apply" : "View"}
-                  </Link>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         )}
       </div>

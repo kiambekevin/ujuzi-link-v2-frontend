@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
 
+import ujuziLogo from '../../assets/images/ujuzink.png';
+
 export default function Footer() {
   return (
     <footer>
@@ -11,7 +13,7 @@ export default function Footer() {
                 className="logo-icon"
                 style={{ width: 42, height: 42, fontSize: '1.3rem' }}
               >
-                <i className="fas fa-graduation-cap" aria-hidden="true"></i>
+                <img src={ujuziLogo} width="75" height="75" alt="Ujuzi Link logo" />
               </div>
               <div className="logo-text" style={{ fontSize: '1.3rem' }}>
                 Ujuzi Link{' '}
@@ -61,21 +63,21 @@ export default function Footer() {
             <h4>Contact</h4>
             <ul>
               <li>
-                <a href="mailto:info@ujizilink.go.ke">
+                <a href="mailto:info@labour.go.ke">
                   <i className="fas fa-envelope" style={{ marginRight: '0.6rem' }} aria-hidden="true"></i>{' '}
-                  info@ujizilink.go.ke
+                  info@labour.go.ke
                 </a>
               </li>
               <li>
-                <a href="tel:+254200000000">
+                <a href="tel:+2542729801804">
                   <i className="fas fa-phone-alt" style={{ marginRight: '0.6rem' }} aria-hidden="true"></i>{' '}
-                  +254 20 000 0000
+                  +254 (0) 2729801/804-819
                 </a>
               </li>
               <li>
                 <span style={{ color: 'inherit', fontSize: '0.88rem' }}>
                   <i className="fas fa-map-pin" style={{ marginRight: '0.6rem' }} aria-hidden="true"></i>{' '}
-                  Nairobi, Kenya
+                  Bishops Road, Social Security House, P.O. Box 40326 – 00100, Nairobi, Kenya
                 </span>
               </li>
             </ul>
