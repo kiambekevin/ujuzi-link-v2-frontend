@@ -52,7 +52,7 @@ export default function Applications() {
                 {(data?.results || []).map((a) => (
                   <tr key={a.id}>
                     <td><b>{a.opportunity?.title}</b></td>
-                    <td>{a.opportunity?.organization_name || "—"}</td>
+                    <td>{a.opportunity?.organization_name || "-"}</td>
                     <td className="small muted">{a.opportunity?.type?.replace(/_/g, " ")}</td>
                     <td><StatusBadge status={a.status} /></td>
                     <td className="small muted">{fmtDate(a.submitted_at)}</td>

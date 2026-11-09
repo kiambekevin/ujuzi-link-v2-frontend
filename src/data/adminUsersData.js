@@ -162,7 +162,7 @@ export const USERS = [
     loginAttempts: 2,
     twoFactor: false,
     flags: 1,
-    suspensionReason: 'Fraud investigation — requested payment from trainee',
+    suspensionReason: 'Fraud investigation - requested payment from trainee',
     audit: [
       { id: 'a1', action: 'Account suspended', detail: 'Fraud investigation opened', at: '2026-10-20 08:30', by: 'Dr. Margaret Wairimu' },
       { id: 'a2', action: 'Logged in', detail: 'Successful login', at: '2026-10-20 08:20', by: 'Self' },
@@ -508,7 +508,7 @@ export const USERS = [
     twoFactor: false,
     flags: 0,
     audit: [
-      { id: 'a1', action: 'Account deactivated', detail: 'Admin deactivation — 60 days inactive', at: '2026-08-22 16:45', by: 'System schedule' },
+      { id: 'a1', action: 'Account deactivated', detail: 'Admin deactivation - 60 days inactive', at: '2026-08-22 16:45', by: 'System schedule' },
       { id: 'a2', action: 'Logged in', detail: 'Last successful login', at: '2026-06-20 10:15', by: 'Self' }
     ]
   }

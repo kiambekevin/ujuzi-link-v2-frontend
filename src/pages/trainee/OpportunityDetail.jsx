@@ -268,7 +268,7 @@ export default function OpportunityDetail() {
               <span className="odt-dl-label">
                 <Clock size={13} strokeWidth={2.5} /> Working hours
               </span>
-              <span className="odt-dl-value">{opp.working_hours || "—"}</span>
+              <span className="odt-dl-value">{opp.working_hours || "-"}</span>
             </div>
             {opp.stipend_amount && (
               <div className="odt-dl-row">
@@ -379,7 +379,7 @@ export default function OpportunityDetail() {
 
       {/* Apply modal */}
       {applyOpen && (
-        <Modal title={`Apply — ${opp.title}`} onClose={() => setApplyOpen(false)}>
+        <Modal title={`Apply - ${opp.title}`} onClose={() => setApplyOpen(false)}>
           {applyError && (
             <div className="odt-modal-error">
               <AlertCircle size={14} strokeWidth={2.5} />

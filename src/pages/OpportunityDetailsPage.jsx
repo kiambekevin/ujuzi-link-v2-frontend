@@ -33,22 +33,22 @@ const DOC_LABELS = {
   OTHER: "Other supporting documents",
 };
 
-// Safe text coercion — see the dashboard fix. Never crashes if the API returns
+// Safe text coercion - see the dashboard fix. Never crashes if the API returns
 // a nested object where a string was expected.
 function text(v) {
-  if (v == null) return "—";
-  if (typeof v === "string") return v || "—";
+  if (v == null) return "-";
+  if (typeof v === "string") return v || "-";
   if (typeof v === "number" || typeof v === "boolean") return String(v);
   if (Array.isArray(v)) {
-    const parts = v.map(text).filter((x) => x && x !== "—");
-    return parts.length ? parts.join(", ") : "—";
+    const parts = v.map(text).filter((x) => x && x !== "-");
+    return parts.length ? parts.join(", ") : "-";
   }
-  if (typeof v === "object") return v.name ?? v.title ?? v.label ?? v.code ?? "—";
+  if (typeof v === "object") return v.name ?? v.title ?? v.label ?? v.code ?? "-";
   return String(v);
 }
 
 function fmtDate(iso) {
-  if (!iso) return "—";
+  if (!iso) return "-";
   try {
     return new Date(`${iso}`.length === 10 ? `${iso}T23:59:59` : iso).toLocaleDateString("en-GB", {
       day: "numeric",
@@ -76,28 +76,28 @@ function orgName(opp) {
 }
 
 function durationLabel(opp) {
-  if (!opp) return "—";
+  if (!opp) return "-";
   if (opp.duration_display) return opp.duration_display;
   if (opp.duration_value) {
     const unit = String(opp.duration_unit || "").toLowerCase();
     return `${opp.duration_value} ${unit}${opp.duration_value === 1 ? "" : "s"}`;
   }
-  return "—";
+  return "-";
 }
 
 function stipendLabel(opp) {
-  if (!opp) return "—";
+  if (!opp) return "-";
   if (opp.compensation === "UNPAID") return "Not provided";
   if (opp.stipend_amount) return `KES ${opp.stipend_amount} / month`;
   if (opp.compensation === "STIPEND") return "Stipend provided";
   if (opp.compensation === "PAID") return "Paid";
-  return opp.compensation_display || "—";
+  return opp.compensation_display || "-";
 }
 
 function locationLabel(opp) {
-  if (!opp) return "—";
+  if (!opp) return "-";
   const bits = [opp.county, opp.location || opp.worksite].filter(Boolean);
-  return bits.length ? bits.join(", ") : "—";
+  return bits.length ? bits.join(", ") : "-";
 }
 
 export default function OpportunityDetailsPage() {
@@ -158,7 +158,7 @@ export default function OpportunityDetailsPage() {
         setSimilar(list.filter((o) => String(o.id) !== String(opp.id)).slice(0, 4));
       })
       .catch(() => {
-        /* silent — similar list is optional */
+        /* silent - similar list is optional */
       });
 
     return () => {
@@ -411,7 +411,7 @@ export default function OpportunityDetailsPage() {
                       </div>
                     </div>
                   )}
-                  {locationLabel(opp) !== "—" && (
+                  {locationLabel(opp) !== "-" && (
                     <div className="od-detail-item">
                       <div className="od-detail-icon"><i className="fas fa-map-marker-alt" aria-hidden="true"></i></div>
                       <div>

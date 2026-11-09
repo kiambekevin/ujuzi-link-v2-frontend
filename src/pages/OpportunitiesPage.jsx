@@ -157,7 +157,7 @@ function toCardModel(opp) {
     typeClass: TYPE_CLASS[type] || "other",
     compensation,
     compensationLabel,
-    durationLabel: opp.duration_display || "—",
+    durationLabel: opp.duration_display || "-",
     durationWeeks,
     workMode: opp.work_mode || null,
     qualification: firstSkill || "TVET Level",
@@ -950,7 +950,7 @@ export default function OpportunitiesPage() {
                                   day: "numeric",
                                   month: "short",
                                 })
-                              : "—"}
+                              : "-"}
                           </div>
                           <button
                             className="btn-view"

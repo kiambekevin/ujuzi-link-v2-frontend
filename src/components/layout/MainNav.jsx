@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import { useAuth } from '../../context/AuthContext'
 
 
-// Menu definitions unchanged — only the auth actions block below changes.
+// Menu definitions unchanged - only the auth actions block below changes.
 const MENUS = [
   {
     key: 'platform',

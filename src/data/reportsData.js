@@ -1,7 +1,7 @@
 // src/data/reportsData.js
 
 /**
- * Report templates — pre-built report definitions the admin can run.
+ * Report templates - pre-built report definitions the admin can run.
  * Each template declares which datasets it pulls from and what format it renders.
  */
 export const REPORT_TEMPLATES = [
@@ -191,7 +191,7 @@ export const KPI_CARDS = [
 ]
 
 /**
- * Placement funnel — one row per stage.
+ * Placement funnel - one row per stage.
  * `value` is the count at that stage; `pct` is relative to the first stage.
  */
 export const PLACEMENT_FUNNEL = [
@@ -205,7 +205,7 @@ export const PLACEMENT_FUNNEL = [
 ]
 
 /**
- * County coverage — same shape as superAdminData.COUNTY_COVERAGE plus gap metrics.
+ * County coverage - same shape as superAdminData.COUNTY_COVERAGE plus gap metrics.
  */
 export const COUNTY_REPORT = [
   {
@@ -321,7 +321,7 @@ export const COUNTY_REPORT = [
 ]
 
 /**
- * Sector demand — advertised opportunities, applications, placements.
+ * Sector demand - advertised opportunities, applications, placements.
  */
 export const SECTOR_REPORT = [
   { sector: 'ICT & Digital', opportunities: 42, applications: 682, placements: 982, completed: 872, pct: 100, color: '#6D28D9' },
@@ -335,7 +335,7 @@ export const SECTOR_REPORT = [
 ]
 
 /**
- * Employer participation — top employers by placements hosted.
+ * Employer participation - top employers by placements hosted.
  */
 export const EMPLOYER_REPORT = [
   { employer: 'Safaricom PLC', sector: 'ICT & Digital', verified: true, opportunities: 24, applications: 412, placements: 86, completed: 62, completionRate: 92 },
@@ -371,9 +371,9 @@ export const OUTCOME_REPORT = [
   { outcome: 'Placements commenced', value: 3842, pct: 100, color: '#6D28D9' },
   { outcome: 'Placements completed', value: 3228, pct: 84, color: '#065F46' },
   { outcome: 'Extended beyond planned duration', value: 168, pct: 4.4, color: '#0369A1' },
-  { outcome: 'Discontinued — trainee request', value: 148, pct: 3.9, color: '#92400E' },
-  { outcome: 'Discontinued — employer request', value: 96, pct: 2.5, color: '#9D174D' },
-  { outcome: 'Discontinued — safeguarding', value: 14, pct: 0.4, color: '#B91C1C' },
+  { outcome: 'Discontinued - trainee request', value: 148, pct: 3.9, color: '#92400E' },
+  { outcome: 'Discontinued - employer request', value: 96, pct: 2.5, color: '#9D174D' },
+  { outcome: 'Discontinued - safeguarding', value: 14, pct: 0.4, color: '#B91C1C' },
   { outcome: 'Transitioned to employment', value: 1240, pct: 32, color: '#047857' },
   { outcome: 'Transitioned to further training', value: 682, pct: 18, color: '#7E22CE' },
   { outcome: 'Self-employment / freelance', value: 214, pct: 5.6, color: '#C084FC' }
@@ -442,7 +442,7 @@ export const SATISFACTION_REPORT = [
 ]
 
 /**
- * Opportunity gaps — counties and sectors where opportunities are limited.
+ * Opportunity gaps - counties and sectors where opportunities are limited.
  */
 export const GAP_REPORT = [
   {
@@ -512,7 +512,7 @@ export const GAP_REPORT = [
 ]
 
 /**
- * Recent report exports — activity log.
+ * Recent report exports - activity log.
  */
 export const RECENT_EXPORTS = [
   { id: 'exp-01', name: 'Placement funnel', format: 'CSV', range: 'Last 90 days', generatedBy: 'Dr. Margaret Wairimu', generatedAt: '2026-10-20 10:14', size: '48 KB' },

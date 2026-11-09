@@ -268,7 +268,7 @@ export default function ApplyPage() {
       const { data } = await api.post("/profile/documents/", fd, {
         headers: { "Content-Type": "multipart/form-data" },
       });
-      // Append — multiple docs per type are supported.
+      // Append - multiple docs per type are supported.
       setExistingDocs((prev) => [...prev, data]);
     } catch (err) {
       alert(errorMessage(err, "Failed to upload document."));

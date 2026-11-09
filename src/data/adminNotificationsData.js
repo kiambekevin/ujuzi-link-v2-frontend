@@ -69,7 +69,7 @@ export const NOTIFICATION_SUMMARY = {
 }
 
 /**
- * Templates — each has subject/body variants, default channels, and status.
+ * Templates - each has subject/body variants, default channels, and status.
  */
 export const NOTIFICATION_TEMPLATES = [
   {
@@ -84,9 +84,9 @@ export const NOTIFICATION_TEMPLATES = [
     editedBy: 'Dr. Margaret Wairimu',
     sent24h: 186,
     deliveryRate: 99.2,
-    subject: 'Welcome to Ujuzi Link — verify your account',
+    subject: 'Welcome to Ujuzi Link - verify your account',
     body:
-      'Hi {{firstName}},\n\nYour Ujuzi Link account has been created. Use the code below to verify your account and start exploring workplace-learning opportunities.\n\nVerification code: {{code}}\n\nThe code expires in 10 minutes.\n\nNeed help? Contact support@ujizilink.go.ke\n\n— The Ujuzi Link team'
+      'Hi {{firstName}},\n\nYour Ujuzi Link account has been created. Use the code below to verify your account and start exploring workplace-learning opportunities.\n\nVerification code: {{code}}\n\nThe code expires in 10 minutes.\n\nNeed help? Contact support@ujizilink.go.ke\n\n- The Ujuzi Link team'
   },
   {
     id: 'tpl-002',
@@ -102,7 +102,7 @@ export const NOTIFICATION_TEMPLATES = [
     deliveryRate: 99.8,
     subject: 'Application received: {{opportunityTitle}}',
     body:
-      'Hi {{firstName}},\n\nYour application for "{{opportunityTitle}}" at {{employerName}} has been received. We\'ll notify you when the employer reviews your application.\n\nYou can track the status from your dashboard.\n\n— The Ujuzi Link team'
+      'Hi {{firstName}},\n\nYour application for "{{opportunityTitle}}" at {{employerName}} has been received. We\'ll notify you when the employer reviews your application.\n\nYou can track the status from your dashboard.\n\n- The Ujuzi Link team'
   },
   {
     id: 'tpl-003',
@@ -118,7 +118,7 @@ export const NOTIFICATION_TEMPLATES = [
     deliveryRate: 97.8,
     subject: 'Update on your application: {{opportunityTitle}}',
     body:
-      'Hi {{firstName}},\n\nYour application for "{{opportunityTitle}}" at {{employerName}} has been updated.\n\nNew status: {{status}}\n\nLog in to your dashboard for full details.\n\n— The Ujuzi Link team'
+      'Hi {{firstName}},\n\nYour application for "{{opportunityTitle}}" at {{employerName}} has been updated.\n\nNew status: {{status}}\n\nLog in to your dashboard for full details.\n\n- The Ujuzi Link team'
   },
   {
     id: 'tpl-004',
@@ -134,7 +134,7 @@ export const NOTIFICATION_TEMPLATES = [
     deliveryRate: 98.2,
     subject: 'Interview invitation: {{opportunityTitle}}',
     body:
-      'Hi {{firstName}},\n\n{{employerName}} would like to invite you for an interview for "{{opportunityTitle}}".\n\nDate: {{interviewDate}}\nTime: {{interviewTime}}\nLocation: {{interviewLocation}}\n\nPlease confirm your attendance from your dashboard.\n\n— The Ujuzi Link team'
+      'Hi {{firstName}},\n\n{{employerName}} would like to invite you for an interview for "{{opportunityTitle}}".\n\nDate: {{interviewDate}}\nTime: {{interviewTime}}\nLocation: {{interviewLocation}}\n\nPlease confirm your attendance from your dashboard.\n\n- The Ujuzi Link team'
   },
   {
     id: 'tpl-005',
@@ -150,7 +150,7 @@ export const NOTIFICATION_TEMPLATES = [
     deliveryRate: 100,
     subject: 'Placement offer: {{opportunityTitle}}',
     body:
-      'Hi {{firstName}},\n\nCongratulations! {{employerName}} has offered you a placement for "{{opportunityTitle}}".\n\nStart date: {{startDate}}\nDuration: {{duration}}\nStipend: {{stipend}}\n\nPlease accept or decline the offer by {{deadline}}.\n\n— The Ujuzi Link team'
+      'Hi {{firstName}},\n\nCongratulations! {{employerName}} has offered you a placement for "{{opportunityTitle}}".\n\nStart date: {{startDate}}\nDuration: {{duration}}\nStipend: {{stipend}}\n\nPlease accept or decline the offer by {{deadline}}.\n\n- The Ujuzi Link team'
   },
   {
     id: 'tpl-006',
@@ -166,7 +166,7 @@ export const NOTIFICATION_TEMPLATES = [
     deliveryRate: 100,
     subject: 'Reminder: respond to your placement offer',
     body:
-      'Hi {{firstName}},\n\nThis is a reminder to respond to the placement offer from {{employerName}} for "{{opportunityTitle}}".\n\nYour offer expires on {{deadline}}.\n\n— The Ujuzi Link team'
+      'Hi {{firstName}},\n\nThis is a reminder to respond to the placement offer from {{employerName}} for "{{opportunityTitle}}".\n\nYour offer expires on {{deadline}}.\n\n- The Ujuzi Link team'
   },
   {
     id: 'tpl-007',
@@ -182,7 +182,7 @@ export const NOTIFICATION_TEMPLATES = [
     deliveryRate: 99.1,
     subject: 'Your placement starts soon',
     body:
-      'Hi {{firstName}},\n\nYour placement at {{employerName}} begins on {{startDate}}. Please confirm you have reviewed the learning plan and workplace requirements.\n\nSupervisor: {{supervisorName}}\nLocation: {{workplace}}\n\n— The Ujuzi Link team'
+      'Hi {{firstName}},\n\nYour placement at {{employerName}} begins on {{startDate}}. Please confirm you have reviewed the learning plan and workplace requirements.\n\nSupervisor: {{supervisorName}}\nLocation: {{workplace}}\n\n- The Ujuzi Link team'
   },
   {
     id: 'tpl-008',
@@ -198,7 +198,7 @@ export const NOTIFICATION_TEMPLATES = [
     deliveryRate: 100,
     subject: 'Your completion certificate is ready',
     body:
-      'Hi {{firstName}},\n\nYour completion certificate for "{{opportunityTitle}}" is now available in your digital learning passport.\n\nView and download it from your dashboard.\n\n— The Ujuzi Link team'
+      'Hi {{firstName}},\n\nYour completion certificate for "{{opportunityTitle}}" is now available in your digital learning passport.\n\nView and download it from your dashboard.\n\n- The Ujuzi Link team'
   },
   {
     id: 'tpl-009',
@@ -214,7 +214,7 @@ export const NOTIFICATION_TEMPLATES = [
     deliveryRate: 100,
     subject: 'New opportunity match: {{opportunityTitle}}',
     body:
-      'Hi {{firstName}},\n\nA new opportunity matching your profile is available: "{{opportunityTitle}}" at {{employerName}}.\n\nMatch reason: {{matchReason}}\n\n— The Ujuzi Link team'
+      'Hi {{firstName}},\n\nA new opportunity matching your profile is available: "{{opportunityTitle}}" at {{employerName}}.\n\nMatch reason: {{matchReason}}\n\n- The Ujuzi Link team'
   },
   {
     id: 'tpl-010',
@@ -230,7 +230,7 @@ export const NOTIFICATION_TEMPLATES = [
     deliveryRate: 100,
     subject: 'We have received your report',
     body:
-      'Hi {{firstName}},\n\nWe have received your report (reference {{referenceId}}) and our safeguarding team is reviewing it. We will keep you updated on progress.\n\nIf your situation is urgent, please also call our safeguarding hotline.\n\n— The Ujuzi Link team'
+      'Hi {{firstName}},\n\nWe have received your report (reference {{referenceId}}) and our safeguarding team is reviewing it. We will keep you updated on progress.\n\nIf your situation is urgent, please also call our safeguarding hotline.\n\n- The Ujuzi Link team'
   },
   {
     id: 'tpl-011',
@@ -246,7 +246,7 @@ export const NOTIFICATION_TEMPLATES = [
     deliveryRate: 100,
     subject: 'Update on your report ({{referenceId}})',
     body:
-      'Hi {{firstName}},\n\nThere is an update on your report {{referenceId}}.\n\nNew status: {{status}}\n\nLog in to your dashboard for details.\n\n— The Ujuzi Link team'
+      'Hi {{firstName}},\n\nThere is an update on your report {{referenceId}}.\n\nNew status: {{status}}\n\nLog in to your dashboard for details.\n\n- The Ujuzi Link team'
   },
   {
     id: 'tpl-012',
@@ -262,7 +262,7 @@ export const NOTIFICATION_TEMPLATES = [
     deliveryRate: 100,
     subject: 'Your account verification is in progress',
     body:
-      'Hi {{firstName}},\n\nOur team has begun verifying your account. This typically takes 1–3 working days.\n\nWe may contact you if we need additional documents.\n\n— The Ujuzi Link team'
+      'Hi {{firstName}},\n\nOur team has begun verifying your account. This typically takes 1–3 working days.\n\nWe may contact you if we need additional documents.\n\n- The Ujuzi Link team'
   },
   {
     id: 'tpl-013',
@@ -276,9 +276,9 @@ export const NOTIFICATION_TEMPLATES = [
     editedBy: 'Dr. Margaret Wairimu',
     sent24h: 1,
     deliveryRate: 100,
-    subject: '[URGENT] Safeguarding report — {{category}}',
+    subject: '[URGENT] Safeguarding report - {{category}}',
     body:
-      'A new safeguarding report has been received.\n\nSeverity: {{severity}}\nTarget: {{target}}\nReporter: {{reporter}}\n\nReview immediately in the admin complaints queue.\n\n— Ujuzi Link (internal)'
+      'A new safeguarding report has been received.\n\nSeverity: {{severity}}\nTarget: {{target}}\nReporter: {{reporter}}\n\nReview immediately in the admin complaints queue.\n\n- Ujuzi Link (internal)'
   },
   {
     id: 'tpl-014',
@@ -294,12 +294,12 @@ export const NOTIFICATION_TEMPLATES = [
     deliveryRate: 100,
     subject: 'Your week on Ujuzi Link',
     body:
-      'Hi {{firstName}},\n\nHere are the highlights from your week on Ujuzi Link:\n\n{{digestItems}}\n\n— The Ujuzi Link team'
+      'Hi {{firstName}},\n\nHere are the highlights from your week on Ujuzi Link:\n\n{{digestItems}}\n\n- The Ujuzi Link team'
   }
 ]
 
 /**
- * Delivery log — recent notifications, including failures.
+ * Delivery log - recent notifications, including failures.
  */
 export const NOTIFICATION_LOG = [
   {
@@ -312,7 +312,7 @@ export const NOTIFICATION_LOG = [
     status: 'delivered',
     sentAt: '2026-10-20 09:48',
     deliveredAt: '2026-10-20 09:48',
-    ref: 'CareerLink Services Ltd — Fraud',
+    ref: 'CareerLink Services Ltd - Fraud',
     error: null
   },
   {
@@ -325,7 +325,7 @@ export const NOTIFICATION_LOG = [
     status: 'failed',
     sentAt: '2026-10-20 09:42',
     deliveredAt: null,
-    ref: 'Safaricom PLC — Software Development Intern',
+    ref: 'Safaricom PLC - Software Development Intern',
     error: 'WhatsApp channel not configured'
   },
   {
@@ -338,7 +338,7 @@ export const NOTIFICATION_LOG = [
     status: 'delivered',
     sentAt: '2026-10-20 09:42',
     deliveredAt: '2026-10-20 09:42',
-    ref: 'Safaricom PLC — Software Development Intern',
+    ref: 'Safaricom PLC - Software Development Intern',
     error: null
   },
   {
@@ -351,7 +351,7 @@ export const NOTIFICATION_LOG = [
     status: 'failed',
     sentAt: '2026-10-20 09:30',
     deliveredAt: null,
-    ref: 'KenGen — Mechanical Engineering Apprentice',
+    ref: 'KenGen - Mechanical Engineering Apprentice',
     error: 'Invalid phone number format'
   },
   {
@@ -364,7 +364,7 @@ export const NOTIFICATION_LOG = [
     status: 'delivered',
     sentAt: '2026-10-20 09:22',
     deliveredAt: '2026-10-20 09:22',
-    ref: 'Kenya Power — Electrical Installation Technician Attachment',
+    ref: 'Kenya Power - Electrical Installation Technician Attachment',
     error: null
   },
   {
@@ -377,7 +377,7 @@ export const NOTIFICATION_LOG = [
     status: 'delivered',
     sentAt: '2026-10-20 08:55',
     deliveredAt: '2026-10-20 08:55',
-    ref: 'Safaricom PLC — Software Development Intern',
+    ref: 'Safaricom PLC - Software Development Intern',
     error: null
   },
   {
@@ -416,7 +416,7 @@ export const NOTIFICATION_LOG = [
     status: 'delivered',
     sentAt: '2026-10-20 08:00',
     deliveredAt: '2026-10-20 08:00',
-    ref: 'Konza Technopolis — Smart City Innovation Intern',
+    ref: 'Konza Technopolis - Smart City Innovation Intern',
     error: null
   },
   {
@@ -429,7 +429,7 @@ export const NOTIFICATION_LOG = [
     status: 'failed',
     sentAt: '2026-10-19 22:12',
     deliveredAt: null,
-    ref: 'Thika Clothing — Garment Production Trainee',
+    ref: 'Thika Clothing - Garment Production Trainee',
     error: 'Recipient account deactivated'
   },
   {
@@ -442,7 +442,7 @@ export const NOTIFICATION_LOG = [
     status: 'delivered',
     sentAt: '2026-10-19 18:30',
     deliveredAt: '2026-10-19 18:31',
-    ref: 'Mombasa Cement — Manufacturing Process Trainee',
+    ref: 'Mombasa Cement - Manufacturing Process Trainee',
     error: null
   },
   {

@@ -16,7 +16,7 @@ const OPPORTUNITY_TYPES = [
 
 const STEPS = [
   ["fa-id-card", "Create your profile", "Register in minutes, verify with a one-time code, and build a rich profile of your education, skills and documents."],
-  ["fa-wand-magic-sparkles", "Get matched", "Our smart matching recommends opportunities that fit your skills, location and career goals — and tells you exactly why."],
+  ["fa-wand-magic-sparkles", "Get matched", "Our smart matching recommends opportunities that fit your skills, location and career goals - and tells you exactly why."],
   ["fa-passport", "Learn, work & grow", "Apply, get placed, and build a verified Digital Learning Passport you can share with any future employer."],
 ];
 
@@ -99,7 +99,7 @@ export default function Landing() {
           </h1>
           <p className="sub">
             Ujuzi Link connects young Kenyans with verified employers offering apprenticeships, internships,
-            attachments, pupillage and more — with smart matching that explains why each opportunity fits you.
+            attachments, pupillage and more - with smart matching that explains why each opportunity fits you.
           </p>
           <div className="hero-search">
             <i className="fas fa-magnifying-glass" style={{ alignSelf: "center", marginLeft: 20, color: "var(--text-muted)" }} />
@@ -176,7 +176,7 @@ export default function Landing() {
             <ul className="match-reasons">
               <li><i className="fas fa-check" /> Register once and get an official verified badge</li>
               <li><i className="fas fa-check" /> Advertise all 9 opportunity types with capacity limits</li>
-              <li><i className="fas fa-check" /> Shortlist, interview and offer — all in one workflow</li>
+              <li><i className="fas fa-check" /> Shortlist, interview and offer - all in one workflow</li>
               <li><i className="fas fa-check" /> Manage placements, supervisors and assessments</li>
             </ul>
             <Link to="/register?type=organization" className="btn btn-primary mt-24"><i className="fas fa-arrow-right" /> Advertise opportunities</Link>
@@ -252,7 +252,7 @@ export default function Landing() {
           </div>
         </div>
         <div className="container" style={{ borderTop: "1px solid rgba(255,255,255,0.12)", marginTop: 36, paddingTop: 20, textAlign: "center" }}>
-          <span className="tiny">© {new Date().getFullYear()} Ujuzi Link — Ministry of Labour and Social Protection, Republic of Kenya. All rights reserved.</span>
+          <span className="tiny">© {new Date().getFullYear()} Ujuzi Link - Ministry of Labour and Social Protection, Republic of Kenya. All rights reserved.</span>
         </div>
       </footer>
     </div>

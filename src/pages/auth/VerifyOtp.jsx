@@ -62,7 +62,7 @@ export default function VerifyOtp() {
       const pendingPassword = pending?.password || "";
 
       if (!pendingPassword) {
-        // Nothing stashed (e.g. user reloaded) — fall back to the login page.
+        // Nothing stashed (e.g. user reloaded) - fall back to the login page.
         toast.success("Account verified. Please sign in.");
         navigate("/login?verified=1", { replace: true });
         return;
@@ -93,7 +93,7 @@ export default function VerifyOtp() {
           try {
             await api.patch("/profile/", patch);
           } catch (flushErr) {
-            // Do not block login — profile can be completed later.
+            // Do not block login - profile can be completed later.
             // eslint-disable-next-line no-console
             console.warn("Profile flush failed:", flushErr);
           }

@@ -261,7 +261,7 @@ function UserDrawer({ userId, currentUser, onClose, onOpenModal }) {
                   ? ` (HTTP ${error.response.status})`
                   : ""}
                 {error?.response?.data?.detail
-                  ? ` — ${error.response.data.detail}`
+                  ? ` - ${error.response.data.detail}`
                   : ""}
               </span>
             </div>
@@ -304,7 +304,7 @@ function UserDrawer({ userId, currentUser, onClose, onOpenModal }) {
                   <DrawerRow
                     icon={Mail}
                     label="Email"
-                    value={user.email || "—"}
+                    value={user.email || "-"}
                     badge={
                       user.email
                         ? user.is_email_verified
@@ -316,7 +316,7 @@ function UserDrawer({ userId, currentUser, onClose, onOpenModal }) {
                   <DrawerRow
                     icon={Phone}
                     label="Phone"
-                    value={user.phone || "—"}
+                    value={user.phone || "-"}
                     badge={
                       user.phone
                         ? user.is_phone_verified
@@ -370,7 +370,7 @@ function UserDrawer({ userId, currentUser, onClose, onOpenModal }) {
                     <DrawerRow
                       icon={UserRound}
                       label="Full name"
-                      value={user.trainee_profile.full_name || "—"}
+                      value={user.trainee_profile.full_name || "-"}
                     />
                     {user.trainee_profile.gender && (
                       <DrawerRow
@@ -438,7 +438,7 @@ function UserDrawer({ userId, currentUser, onClose, onOpenModal }) {
                         key={log.id}
                         icon={log.action === "SUSPEND" ? Ban : RotateCcw}
                         label={`${log.action} · ${fmtDate(log.created_at, true)}`}
-                        value={log.reason || log.actor_name || "—"}
+                        value={log.reason || log.actor_name || "-"}
                       />
                     ))}
                   </div>
@@ -501,7 +501,7 @@ function UserDrawer({ userId, currentUser, onClose, onOpenModal }) {
             ) : (
               <div className="ausr-drawer-actions is-locked">
                 <span className="ausr-drawer-locked-note">
-                  <Lock size={12} strokeWidth={2.5} /> Protected administrator —
+                  <Lock size={12} strokeWidth={2.5} /> Protected administrator -
                   no actions available
                 </span>
               </div>
@@ -1010,7 +1010,7 @@ export default function Users() {
                             <span className="ausr-contact-text">{u.phone}</span>
                           </span>
                         ) : (
-                          <span className="ausr-contact">—</span>
+                          <span className="ausr-contact">-</span>
                         )}
                       </td>
                       <td>
@@ -1019,7 +1019,7 @@ export default function Users() {
                       <td className="ausr-col-joined">
                         <span className="ausr-date">
                           <Info size={12} strokeWidth={2.25} />
-                          {u.date_joined ? fmtDate(u.date_joined) : "—"}
+                          {u.date_joined ? fmtDate(u.date_joined) : "-"}
                         </span>
                       </td>
                       <td onClick={(e) => e.stopPropagation()}>

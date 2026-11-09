@@ -125,7 +125,7 @@ export default function Applications() {
                       <div className="apps-opportunity">
                         <Briefcase size={14} strokeWidth={2.25} />
                         <span className="apps-opportunity-title">
-                          {a.opportunity?.title || "—"}
+                          {a.opportunity?.title || "-"}
                         </span>
                       </div>
                     </td>
@@ -173,7 +173,7 @@ export default function Applications() {
                 <div className="apps-mobile-meta">
                   <div className="apps-mobile-meta-row">
                     <Briefcase size={14} strokeWidth={2.25} />
-                    {a.opportunity?.title || "—"}
+                    {a.opportunity?.title || "-"}
                   </div>
                   <div className="apps-mobile-meta-row">
                     <CalendarDays size={14} strokeWidth={2.25} />

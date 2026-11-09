@@ -13,7 +13,7 @@ function Field({ id, label, icon, required, children, hint }) {
   )
 }
 
-// Real backend choices — must stay in sync with:
+// Real backend choices - must stay in sync with:
 //   - apps/core/constants.COUNTY_CHOICES
 //   - apps/core/constants.GENDERS
 const COUNTIES = [
@@ -57,7 +57,7 @@ export default function StepPersonal({ data, updateField, onNext }) {
       return false
     }
 
-    // Under-18 guardianship (TORS 115) — enforced by the backend too.
+    // Under-18 guardianship (TORS 115) - enforced by the backend too.
     if (isUnder18) {
       if (!data.guardianConsent) {
         alert('Participants under 18 require guardian consent.')
@@ -212,7 +212,7 @@ export default function StepPersonal({ data, updateField, onNext }) {
         id="bio"
         label="Short bio (optional)"
         icon="fa-align-left"
-        hint="A couple of sentences about yourself — this is shown to employers alongside your application."
+        hint="A couple of sentences about yourself - this is shown to employers alongside your application."
       >
         <textarea
           id="bio"
@@ -230,7 +230,7 @@ export default function StepPersonal({ data, updateField, onNext }) {
           <i className="fas fa-id-card" aria-hidden="true"></i> Identification
         </div>
         <p className="form-step-sub" style={{ marginTop: 0 }}>
-          Provide at least one — a national ID for Kenyan citizens, or a passport for non-citizens.
+          Provide at least one - a national ID for Kenyan citizens, or a passport for non-citizens.
         </p>
 
         <div className="form-row-2">

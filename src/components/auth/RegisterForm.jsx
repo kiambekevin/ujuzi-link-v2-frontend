@@ -70,7 +70,7 @@ export default function RegisterForm({ onSwitchToLogin }) {
       return
     }
 
-    // Demo registration — create a session for the selected role
+    // Demo registration - create a session for the selected role
     const demoProfiles = {
       trainee: { name: 'New Trainee', id: 'demo-trainee' },
       institution: { name: 'New Institution', id: 'demo-institution' },
@@ -153,7 +153,7 @@ export default function RegisterForm({ onSwitchToLogin }) {
       <div className="info-box">
         <i className="fas fa-info-circle" aria-hidden="true"></i>
         <strong>Demo notice:</strong> This is a front-end preview. No real accounts
-        are created — submitting will sign you in with a demo profile for the
+        are created - submitting will sign you in with a demo profile for the
         selected role.
       </div>
 

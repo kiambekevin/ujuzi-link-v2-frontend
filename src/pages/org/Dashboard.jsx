@@ -142,7 +142,7 @@ export default function Dashboard() {
         <StatCard
           icon={Armchair}
           label="Places available"
-          value={`${data.places_available} / ${data.capacity || "—"}`}
+          value={`${data.places_available} / ${data.capacity || "-"}`}
           split
         />
       </div>

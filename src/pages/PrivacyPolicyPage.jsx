@@ -26,11 +26,11 @@ const SECTIONS = [
 ]
 
 const LEGAL_BASIS = [
-  { basis: 'Consent', applies: 'Where you have given clear, informed consent — for example, to process sensitive personal data such as disability status, or to receive optional communications.' },
-  { basis: 'Contract', applies: 'Where processing is necessary to enter into or perform a contract with you — for example, to create your account, process your application or administer a placement.' },
+  { basis: 'Consent', applies: 'Where you have given clear, informed consent - for example, to process sensitive personal data such as disability status, or to receive optional communications.' },
+  { basis: 'Contract', applies: 'Where processing is necessary to enter into or perform a contract with you - for example, to create your account, process your application or administer a placement.' },
   { basis: 'Legal obligation', applies: 'Where processing is necessary to comply with a legal obligation applicable to the State Department or the Platform.' },
-  { basis: 'Public interest / public task', applies: 'Where processing is necessary to perform a task carried out in the public interest or in the exercise of official authority — including the coordination of national workplace-learning opportunities and the generation of labour-market information.' },
-  { basis: 'Legitimate interests', applies: 'Where processing is necessary for legitimate interests pursued by the State Department or a third party, provided your rights and freedoms are not overridden — for example, to maintain the security and integrity of the Platform.' }
+  { basis: 'Public interest / public task', applies: 'Where processing is necessary to perform a task carried out in the public interest or in the exercise of official authority - including the coordination of national workplace-learning opportunities and the generation of labour-market information.' },
+  { basis: 'Legitimate interests', applies: 'Where processing is necessary for legitimate interests pursued by the State Department or a third party, provided your rights and freedoms are not overridden - for example, to maintain the security and integrity of the Platform.' }
 ]
 
 const RIGHTS = [
@@ -91,7 +91,7 @@ export default function PrivacyPolicyPage() {
           </div>
           <h1>Privacy Policy</h1>
           <p className="header-sub">
-            This Privacy Policy explains how the National TVET Work-Based Learning Placement System (“Ujuzi Link”) collects, uses, stores, shares and protects personal data — and the rights available to trainees, employers, institutions and other users of the platform.
+            This Privacy Policy explains how the National TVET Work-Based Learning Placement System (“Ujuzi Link”) collects, uses, stores, shares and protects personal data - and the rights available to trainees, employers, institutions and other users of the platform.
           </p>
           <div className="header-meta">
             <div className="header-meta-item"><i className="fas fa-calendar-check"></i> <span><strong>Effective:</strong> 1 January 2025</span></div>
@@ -152,9 +152,9 @@ export default function PrivacyPolicyPage() {
                 <div className="summary-grid">
                   <div className="summary-point"><i className="fas fa-circle-check"></i> <span><strong>We collect only what is needed</strong> to register users, advertise and match workplace-learning opportunities, and monitor placements.</span></div>
                   <div className="summary-point"><i className="fas fa-circle-check"></i> <span><strong>Your data is used to connect you</strong> with verified employers, institutions and support services within the platform.</span></div>
-                  <div className="summary-point"><i className="fas fa-circle-check"></i> <span><strong>We share data only with authorised parties</strong> — such as your institution, a prospective employer you apply to, or mandated government agencies.</span></div>
+                  <div className="summary-point"><i className="fas fa-circle-check"></i> <span><strong>We share data only with authorised parties</strong> - such as your institution, a prospective employer you apply to, or mandated government agencies.</span></div>
                   <div className="summary-point"><i className="fas fa-circle-check"></i> <span><strong>We protect your data</strong> through role-based access, encryption in transit, audit trails and regular security reviews.</span></div>
-                  <div className="summary-point"><i className="fas fa-circle-check"></i> <span><strong>You have rights</strong> — including access, correction, deletion, objection and portability, subject to applicable law.</span></div>
+                  <div className="summary-point"><i className="fas fa-circle-check"></i> <span><strong>You have rights</strong> - including access, correction, deletion, objection and portability, subject to applicable law.</span></div>
                   <div className="summary-point"><i className="fas fa-circle-check"></i> <span><strong>We comply with the Kenya Data Protection Act, 2019</strong> and other applicable laws of Kenya.</span></div>
                 </div>
               </div>
@@ -162,7 +162,7 @@ export default function PrivacyPolicyPage() {
               {/* 1. Introduction */}
               <section className="policy-section" id="s1">
                 <SectionHeader num="1" title="Introduction" subtitle="Scope, purpose and your acceptance of this policy" />
-                <p>The National TVET Work-Based Learning Placement System — known as <strong>Ujuzi Link</strong> — is a national digital platform that connects TVET trainees with verified employers and training institutions for industrial attachment, internship, apprenticeship and dual-training placements.</p>
+                <p>The National TVET Work-Based Learning Placement System - known as <strong>Ujuzi Link</strong> - is a national digital platform that connects TVET trainees with verified employers and training institutions for industrial attachment, internship, apprenticeship and dual-training placements.</p>
                 <p>This Privacy Policy describes how personal data is collected, used, disclosed, stored and protected when you use the Ujuzi Link website, mobile application or any related services (together, “the Platform”). It applies to all users of the Platform, including trainees, employers, training institutions, supervisors and platform administrators.</p>
                 <p>By registering for, accessing or using Ujuzi Link, you acknowledge that you have read and understood this Privacy Policy. If you do not agree with any part of this Policy, you should not use the Platform.</p>
                 <div className="callout info">
@@ -193,7 +193,7 @@ export default function PrivacyPolicyPage() {
                   <DefCard term="Sensitive personal data" text="Data revealing race, health status, disability, religion, conscience, belief, genetic data, biometric data, property details, marital status, family details or sexual orientation." />
                   <DefCard term="Data controller" text="A person or institution that determines the purpose and means of processing personal data. The State Department is the controller for Ujuzi Link." />
                   <DefCard term="Data processor" text="A person or institution that processes personal data on behalf of, and under the instructions of, a data controller." />
-                  <DefCard term="Data subject" text="The individual to whom personal data relates — for example, a trainee, employer contact person or institutional supervisor." />
+                  <DefCard term="Data subject" text="The individual to whom personal data relates - for example, a trainee, employer contact person or institutional supervisor." />
                   <DefCard term="Processing" text="Any operation performed on personal data, including collection, recording, storage, retrieval, use, disclosure, alteration or deletion." />
                 </div>
               </section>
@@ -359,7 +359,7 @@ export default function PrivacyPolicyPage() {
                 <ul className="policy-list">
                   <BulletItem><strong>Strictly necessary cookies:</strong> required for core functions such as secure login, session management and accessibility preferences. These cannot be switched off.</BulletItem>
                   <BulletItem><strong>Functional cookies:</strong> remember your settings, such as language and text size, to provide a more personalised experience.</BulletItem>
-                  <BulletItem><strong>Analytical cookies:</strong> help us understand how visitors use the Platform — for example, which pages are most visited — so we can improve the service. These are used in an aggregated form.</BulletItem>
+                  <BulletItem><strong>Analytical cookies:</strong> help us understand how visitors use the Platform - for example, which pages are most visited - so we can improve the service. These are used in an aggregated form.</BulletItem>
                 </ul>
                 <p>You can manage or delete cookies through your browser settings. Blocking certain cookies may affect the functionality and performance of the Platform. Where required, we will ask for your consent before setting non-essential cookies.</p>
               </section>
@@ -374,14 +374,14 @@ export default function PrivacyPolicyPage() {
               {/* 14. International transfers */}
               <section className="policy-section" id="s14">
                 <SectionHeader num="14" title="International data transfers" subtitle="Where your data may be processed outside Kenya" />
-                <p>The Platform is designed to host personal data within Kenya. Where it becomes necessary to transfer personal data outside Kenya — for example, for hosting, technical support or cybersecurity services — we will ensure that appropriate safeguards are in place in accordance with the Kenya Data Protection Act, 2019. These safeguards may include contractual data protection clauses, adequacy determinations or other lawful transfer mechanisms.</p>
+                <p>The Platform is designed to host personal data within Kenya. Where it becomes necessary to transfer personal data outside Kenya - for example, for hosting, technical support or cybersecurity services - we will ensure that appropriate safeguards are in place in accordance with the Kenya Data Protection Act, 2019. These safeguards may include contractual data protection clauses, adequacy determinations or other lawful transfer mechanisms.</p>
                 <p>We will only transfer personal data internationally where the transfer is necessary for the purposes described in this Policy and where the rights of data subjects are adequately protected.</p>
               </section>
 
               {/* 15. Changes */}
               <section className="policy-section" id="s15">
                 <SectionHeader num="15" title="Changes to this Policy" subtitle="How we keep this Policy up to date" />
-                <p>We may update this Privacy Policy from time to time to reflect changes in law, the Platform's functionality, or our data protection practices. When we make material changes, we will take appropriate steps to inform you — for example, through a notice on the Platform, by email or through your account.</p>
+                <p>We may update this Privacy Policy from time to time to reflect changes in law, the Platform's functionality, or our data protection practices. When we make material changes, we will take appropriate steps to inform you - for example, through a notice on the Platform, by email or through your account.</p>
                 <p>The “Last updated” date at the top of this page indicates when this Policy was most recently revised. We encourage you to review this Policy periodically to stay informed about how we protect your data.</p>
               </section>
 

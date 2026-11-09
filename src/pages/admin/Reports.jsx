@@ -168,7 +168,7 @@ export default function Reports() {
               ))}
             </select>
             <span className="arpt-field-hint">
-              Optional — limits rows to records associated with this county.
+              Optional - limits rows to records associated with this county.
             </span>
           </div>
         </section>

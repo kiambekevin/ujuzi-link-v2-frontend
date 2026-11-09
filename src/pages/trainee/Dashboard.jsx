@@ -92,7 +92,7 @@ export default function Dashboard() {
   ).length;
   const unread = notifications.filter((n) => !n.read_at).length;
 
-  /* Profile readiness — derived from the profile endpoint */
+  /* Profile readiness - derived from the profile endpoint */
   const readiness = useMemo(() => {
     if (!profile) return { percent: 0, hint: "Finish setting up your profile" };
     let score = 0;
@@ -114,7 +114,7 @@ export default function Dashboard() {
     const percent = total ? (score / total) * 100 : 0;
     const hint =
       percent >= 90
-        ? "You're all set — great job!"
+        ? "You're all set - great job!"
         : percent >= 60
         ? "Add your documents to finish"
         : percent >= 30
@@ -155,7 +155,7 @@ export default function Dashboard() {
         <KpiCard
           icon={FileText}
           label="Applications"
-          value={apps?.count ?? "—"}
+          value={apps?.count ?? "-"}
           sub="Total submitted"
           tone="accent"
         />

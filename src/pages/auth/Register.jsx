@@ -16,7 +16,7 @@ import ujuziLogo from '../../assets/images/ujuzink.png'
 
 // Trainee-only extras are stashed here so VerifyOtp.jsx can PATCH /api/profile/
 // after OTP verification (which requires a JWT). The plaintext password is
-// included so VerifyOtp can auto-login — see VerifyOtp.jsx for the fallback
+// included so VerifyOtp can auto-login - see VerifyOtp.jsx for the fallback
 // if you'd rather not stash it.
 export const REG_PENDING_KEY = "ujuzi.registration.pendingProfile";
 
@@ -213,7 +213,7 @@ export default function Register() {
             })
           );
         } catch {
-          // Private browsing / storage full — non-fatal; VerifyOtp will
+          // Private browsing / storage full - non-fatal; VerifyOtp will
           // fall back to the login page.
         }
       }
@@ -604,7 +604,7 @@ export default function Register() {
                     />
                   </div>
                   <div className="form-hint">
-                    Speeds up verification — you can also upload documents
+                    Speeds up verification - you can also upload documents
                     later.
                   </div>
                 </div>

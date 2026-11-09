@@ -75,7 +75,7 @@ export default function BrandRow({ onSearchClick }) {
           <i className="fas fa-circle-info" aria-hidden="true"></i>
           <span>
             <strong>Kiswahili is coming soon.</strong> The interface is only
-            available in English at the moment — we'll let you know when it's
+            available in English at the moment - we'll let you know when it's
             ready.
           </span>
           <button

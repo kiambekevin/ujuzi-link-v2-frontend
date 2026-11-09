@@ -235,7 +235,7 @@ export default function Opportunities() {
           </button>
           {nearbyError && (
             <span className="tiny muted" style={{ alignSelf: "center" }}>
-              Location unavailable — showing all results.
+              Location unavailable - showing all results.
             </span>
           )}
         </div>

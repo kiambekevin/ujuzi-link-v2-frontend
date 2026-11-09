@@ -1,4 +1,4 @@
-# Ujuzi Link — Frontend (React + Vite)
+# Ujuzi Link - Frontend (React + Vite)
 
 React frontend for the Ujuzi Link platform (Ministry of Labour and Social Protection, Kenya),
 styled after the official site at https://ujuzilink.go.ke/.

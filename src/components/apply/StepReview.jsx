@@ -1,4 +1,4 @@
-// Recognised document types — mirrors StepDocuments.DOC_META.
+// Recognised document types - mirrors StepDocuments.DOC_META.
 // Only used for human-readable labels in the review.
 const DOC_LABELS = {
   CV: 'CV / Resume',
@@ -26,12 +26,12 @@ export default function StepReview({
   onSubmit,
   onGoToStep,
 }) {
-  const display = (v) => (v == null || v === '' ? '—' : String(v))
+  const display = (v) => (v == null || v === '' ? '-' : String(v))
 
   const employer =
     typeof opp?.organization === 'string'
       ? opp.organization
-      : opp?.organization_name || opp?.organization?.name || '—'
+      : opp?.organization_name || opp?.organization?.name || '-'
 
   const workExperiences = Array.isArray(data.workExperiences) ? data.workExperiences : []
 
@@ -98,7 +98,7 @@ export default function StepReview({
             <div className="rv-value">
               {data.idNumber ? `National ID · ${data.idNumber}` : null}
               {data.passportNumber ? `Passport · ${data.passportNumber}` : null}
-              {!data.idNumber && !data.passportNumber ? '—' : null}
+              {!data.idNumber && !data.passportNumber ? '-' : null}
             </div>
           </div>
           {data.bio && (

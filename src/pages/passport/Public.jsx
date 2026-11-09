@@ -63,7 +63,7 @@ export default function PassportPublic() {
             <div className="grid grid-3 mb-24">
               <div className="card card-pad">
                 <div className="tiny bold muted">Type</div>
-                <div className="bold mt-8">{entry.opportunity_type?.replace(/_/g, " ") || "—"}</div>
+                <div className="bold mt-8">{entry.opportunity_type?.replace(/_/g, " ") || "-"}</div>
               </div>
               <div className="card card-pad">
                 <div className="tiny bold muted">Period</div>
@@ -73,7 +73,7 @@ export default function PassportPublic() {
                 <div className="tiny bold muted">Skills demonstrated</div>
                 <div className="mt-8" style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
                   {(entry.skill_names || []).map((s) => <span key={s} className="badge badge-indigo">{s}</span>)}
-                  {(entry.skill_names || []).length === 0 && <span className="small muted">—</span>}
+                  {(entry.skill_names || []).length === 0 && <span className="small muted">-</span>}
                 </div>
               </div>
             </div>
@@ -106,7 +106,7 @@ export default function PassportPublic() {
               </div>
               {verifyResult && verifyResult.valid && (
                 <div className="form-success mt-16">
-                  <i className="fas fa-circle-check" /> <b>{verifyResult.certificate?.title || "Certificate"}</b> — verified
+                  <i className="fas fa-circle-check" /> <b>{verifyResult.certificate?.title || "Certificate"}</b> - verified
                   {verifyResult.certificate?.issued_at && <> on {fmtDate(verifyResult.certificate.issued_at)}</>}.
                 </div>
               )}

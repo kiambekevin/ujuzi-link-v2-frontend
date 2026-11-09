@@ -290,10 +290,10 @@ export function getTraineeProfile(id) {
     bio: [
       `${trainee.firstName} ${trainee.lastName} is a ${trainee.course.toLowerCase()} trainee at ${trainee.institution}, currently seeking a ${trainee.preferredTypes[0]} in the ${trainee.sector} sector.`
     ],
-    dob: '—',
+    dob: '-',
     nationality: 'Kenyan',
     languages: 'English, Kiswahili',
-    availableFrom: '—',
+    availableFrom: '-',
     technicalSkills: trainee.skills.map((s) => ({ icon: 'fa-tools', label: s })),
     softSkills: [],
     education: [
@@ -308,7 +308,7 @@ export function getTraineeProfile(id) {
       ? [
           {
             title: 'Relevant experience',
-            dates: '—',
+            dates: '-',
             org: trainee.institution,
             description: `${trainee.experience} year${trainee.experience === 1 ? '' : 's'} of practical exposure relevant to ${trainee.course.toLowerCase()}.`
           }

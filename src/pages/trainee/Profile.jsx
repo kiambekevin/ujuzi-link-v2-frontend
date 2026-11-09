@@ -232,7 +232,7 @@ function AboutTab({ profile }) {
         <div className="tpf-consent">
           <ShieldAlert size={16} strokeWidth={2.25} />
           <span>
-            You are under 18 — guardian consent is required before applying.
+            You are under 18 - guardian consent is required before applying.
             Update it from the Privacy tab.
           </span>
         </div>
@@ -475,7 +475,7 @@ function SkillsTab() {
               <select className="input" value={proficiency} onChange={(e) => setProficiency(Number(e.target.value))}>
                 {[1, 2, 3, 4, 5].map((p) => (
                   <option key={p} value={p}>
-                    {p} — {["Beginner", "Basic", "Intermediate", "Advanced", "Expert"][p - 1]}
+                    {p} - {["Beginner", "Basic", "Intermediate", "Advanced", "Expert"][p - 1]}
                   </option>
                 ))}
               </select>
@@ -506,7 +506,7 @@ function SkillsTab() {
         </div>
 
         {skills.length === 0 ? (
-          <p className="tpf-empty-inline">No skills yet — add some to improve your matches.</p>
+          <p className="tpf-empty-inline">No skills yet - add some to improve your matches.</p>
         ) : (
           <div className="tpf-skill-list">
             {skills.map((s) => (
@@ -689,7 +689,7 @@ function EducationTab() {
                   <div className="tpf-item-title">{e.institution}</div>
                   <div className="tpf-item-sub">
                     {e.level}
-                    {e.field_of_study ? ` — ${e.field_of_study}` : ""}
+                    {e.field_of_study ? ` - ${e.field_of_study}` : ""}
                     {e.start_date && e.end_date
                       ? ` · ${fmtYear(e.start_date)} → ${fmtYear(e.end_date)}`
                       : ""}

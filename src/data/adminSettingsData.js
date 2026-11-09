@@ -188,14 +188,14 @@ export const DEFAULT_INTEGRATIONS = {
   },
   kra: {
     enabled: true,
-    label: 'Kenya Revenue Authority — PIN verification',
+    label: 'Kenya Revenue Authority - PIN verification',
     status: 'connected',
     lastSync: '2026-10-20 08:30',
     mode: 'read-only'
   },
   smsGateway: {
     enabled: true,
-    label: 'Africa\'s Talking — SMS',
+    label: 'Africa\'s Talking - SMS',
     status: 'connected',
     lastSync: '2026-10-20 09:00',
     mode: 'send-only'

@@ -171,7 +171,7 @@ export default function StepWorkExperience({
                     <strong>{w.position}</strong>
                     <span className="muted"> · {w.organization}</span>
                     <div className="muted" style={{ fontSize: '0.85rem' }}>
-                      {w.start_date || '—'} – {w.is_current ? 'Present' : (w.end_date || '—')}
+                      {w.start_date || '-'} – {w.is_current ? 'Present' : (w.end_date || '-')}
                     </div>
                     {w.description && (
                       <div className="muted" style={{ fontSize: '0.85rem' }}>

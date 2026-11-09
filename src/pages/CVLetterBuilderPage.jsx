@@ -168,7 +168,7 @@ export default function CVLetterBuilderPage() {
                 <span className="badge"><i className="fas fa-file-signature"></i> Build a professional application</span>
               </div>
               <h1>CV &amp; application letter builder</h1>
-              <p className="header-sub">Create a professional, TVET-focused CV and a matching cover letter. Fill in the form on the left and watch the preview update in real time — then download as PDF or print.</p>
+              <p className="header-sub">Create a professional, TVET-focused CV and a matching cover letter. Fill in the form on the left and watch the preview update in real time - then download as PDF or print.</p>
             </div>
             <div className="header-actions">
               <button className="btn btn-light" onClick={loadSample}>
@@ -778,7 +778,7 @@ export default function CVLetterBuilderPage() {
                         {referees.map(r => (
                           <div className="cv-referee" key={r.id}>
                             {r.name && <strong>{r.name}</strong>}
-                            {r.role && <> — <span className="ref-role">{r.role}</span></>}
+                            {r.role && <> - <span className="ref-role">{r.role}</span></>}
                             {r.organisation && <><br />{r.organisation}</>}
                             {(r.email || r.phone) && (
                               <><br />{[r.email, r.phone].filter(Boolean).join(' · ')}</>

@@ -189,7 +189,7 @@ export default function Opportunities() {
                       <span className="aop-cell">
                         <Building2 size={13} strokeWidth={2.25} />
                         <span className="aop-cell-text">
-                          {opp.organization?.name || "—"}
+                          {opp.organization?.name || "-"}
                         </span>
                       </span>
                     </td>

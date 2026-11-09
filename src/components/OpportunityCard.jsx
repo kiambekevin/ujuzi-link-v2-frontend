@@ -45,7 +45,7 @@ export default function OpportunityCard({ opp, linkPrefix = "/app/opportunities"
         <span><i className="fas fa-calendar" style={{ marginRight: 6 }} />Closes {fmtDate(opp.closing_date)}</span>
       </div>
       <div className="row between mt-8 small">
-        <span className="muted">{opp.duration_display || `${opp.duration_value ?? "—"} ${opp.duration_unit ?? ""}`}</span>
+        <span className="muted">{opp.duration_display || `${opp.duration_value ?? "-"} ${opp.duration_unit ?? ""}`}</span>
         <span className={placesLeft <= 2 ? "bold" : "muted"} style={{ color: placesLeft <= 2 ? "var(--warning)" : undefined }}>
           {placesLeft} of {opp.places_total} places left
         </span>

@@ -16,14 +16,14 @@ import "../styles/trainee-profile.css";
 // ---------------------------------------------------------------------------
 
 function text(v) {
-  if (v == null) return "—";
-  if (typeof v === "string") return v || "—";
+  if (v == null) return "-";
+  if (typeof v === "string") return v || "-";
   if (typeof v === "number" || typeof v === "boolean") return String(v);
   if (Array.isArray(v)) {
-    const parts = v.map(text).filter((x) => x && x !== "—");
-    return parts.length ? parts.join(", ") : "—";
+    const parts = v.map(text).filter((x) => x && x !== "-");
+    return parts.length ? parts.join(", ") : "-";
   }
-  if (typeof v === "object") return v.name ?? v.title ?? v.label ?? v.code ?? "—";
+  if (typeof v === "object") return v.name ?? v.title ?? v.label ?? v.code ?? "-";
   return String(v);
 }
 
@@ -51,7 +51,7 @@ function calculateAge(dob) {
 }
 
 function fmtDate(iso) {
-  if (!iso) return "—";
+  if (!iso) return "-";
   try {
     return new Date(iso).toLocaleDateString("en-GB", {
       day: "numeric", month: "short", year: "numeric",
@@ -60,7 +60,7 @@ function fmtDate(iso) {
 }
 
 function yearOf(iso) {
-  return iso ? String(iso).slice(0, 4) : "—";
+  return iso ? String(iso).slice(0, 4) : "-";
 }
 
 // All values must match the backend enums (apps/core/constants.py).
@@ -111,7 +111,7 @@ export default function TraineeProfilePage() {
 
     const load = async () => {
       if (me.role === "TRAINEE") {
-        // No /trainees/{id}/ endpoint yet — a trainee can only view their own
+        // No /trainees/{id}/ endpoint yet - a trainee can only view their own
         // profile via /profile/. So any trainee URL resolves to self.
         try {
           const { data } = await api.get("/profile/");
@@ -203,7 +203,7 @@ export default function TraineeProfilePage() {
   // ---- Save profile edits -----------------------------------------------
   const handleSaveProfile = useCallback(
     async (patch) => {
-      // PATCH /api/profile/ — only fields in TraineeProfileWriteSerializer.
+      // PATCH /api/profile/ - only fields in TraineeProfileWriteSerializer.
       const { data } = await api.patch("/profile/", patch);
       setTrainee(data);
       setEditing(false);
@@ -635,7 +635,7 @@ export default function TraineeProfilePage() {
 }
 
 // ---------------------------------------------------------------------------
-// Edit modal — fields mirror TraineeProfileWriteSerializer
+// Edit modal - fields mirror TraineeProfileWriteSerializer
 // ---------------------------------------------------------------------------
 
 function EditProfileModal({ profile, onClose, onSave }) {
@@ -682,7 +682,7 @@ function EditProfileModal({ profile, onClose, onSave }) {
     }
 
     // Only send fields the write serializer accepts, and only ones that
-    // actually changed — keeps the PATCH minimal.
+    // actually changed - keeps the PATCH minimal.
     const patch = {};
     const keys = [
       "first_name", "middle_name", "last_name", "gender", "date_of_birth",

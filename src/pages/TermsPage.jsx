@@ -170,7 +170,7 @@ export default function TermsPage() {
                   <BulletItem text="Digital placement agreements, learning plans, logbooks, supervisor feedback and competency assessments;" />
                   <BulletItem text="Aggregated information on occupational demand, placement availability, employer participation and transition outcomes." />
                 </ul>
-                <p>The State Department provides overall coordination of the Platform, subject to Government approval and confirmation of the relevant institutional mandates. The Platform is designed to complement — not replace — existing industrial-attachment, apprenticeship, TVET quality assurance and employment services.</p>
+                <p>The State Department provides overall coordination of the Platform, subject to Government approval and confirmation of the relevant institutional mandates. The Platform is designed to complement - not replace - existing industrial-attachment, apprenticeship, TVET quality assurance and employment services.</p>
                 <div className="callout info">
                   <i className="fas fa-circle-info"></i>
                   <div><strong>Important:</strong> The Platform facilitates introductions, coordination and record-keeping. It does not itself employ trainees, nor does it guarantee a placement, a particular outcome, or the conduct of any employer, institution or trainee.</div>
@@ -182,7 +182,7 @@ export default function TermsPage() {
                 <SectionHeader num="3" title="Definitions" subtitle="Key terms used in these Terms" />
                 <div className="def-grid">
                   <DefCard term="Platform" text="The Ujuzi Link website, mobile application and any related digital services operated or coordinated by the State Department." />
-                  <DefCard term="User" text="Any person or organisation that registers for, accesses or uses the Platform — including trainees, employers and training institutions." />
+                  <DefCard term="User" text="Any person or organisation that registers for, accesses or uses the Platform - including trainees, employers and training institutions." />
                   <DefCard term="Trainee" text="A registered TVET trainee seeking or undertaking workplace learning through the Platform." />
                   <DefCard term="Employer" text="An organisation or individual that advertises or hosts workplace-learning opportunities through the Platform." />
                   <DefCard term="Institution" text="A TVET training institution that verifies trainees, approves placements and supervises learning within its mandate." />
@@ -303,7 +303,7 @@ export default function TermsPage() {
                 <ul className="policy-list">
                   <BulletItem><strong>Role of the Platform:</strong> Ujuzi Link facilitates the process and maintains records. The legal relationship of any placement is between the trainee, the employer and, where applicable, the institution.</BulletItem>
                   <BulletItem><strong>Learning plan:</strong> the employer and institution should agree a structured learning plan setting out activities, supervision and assessment arrangements.</BulletItem>
-                  <BulletItem><strong>Changes:</strong> any material change to a placement — including duration, location or conditions — should be recorded through the Platform and agreed by the relevant parties.</BulletItem>
+                  <BulletItem><strong>Changes:</strong> any material change to a placement - including duration, location or conditions - should be recorded through the Platform and agreed by the relevant parties.</BulletItem>
                   <BulletItem><strong>Completion:</strong> upon completion, the employer and institution should record assessment outcomes and confirm completion through the Platform.</BulletItem>
                 </ul>
               </section>
@@ -385,7 +385,7 @@ export default function TermsPage() {
               {/* 18. Changes */}
               <section className="policy-section" id="s18">
                 <SectionHeader num="18" title="Changes to these Terms" subtitle="How we keep these Terms up to date" />
-                <p>We may update these Terms from time to time to reflect changes in law, the Platform's functionality, or our practices. When we make material changes, we will take appropriate steps to inform you — for example, through a notice on the Platform, by email or through your account.</p>
+                <p>We may update these Terms from time to time to reflect changes in law, the Platform's functionality, or our practices. When we make material changes, we will take appropriate steps to inform you - for example, through a notice on the Platform, by email or through your account.</p>
                 <p>The “Last updated” date at the top of this page indicates when these Terms were most recently revised. Your continued use of the Platform after changes take effect constitutes acceptance of the revised Terms.</p>
               </section>
 

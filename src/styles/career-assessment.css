@@ -107,7 +107,7 @@
 .result-footer { display: flex; align-items: center; justify-content: space-between; gap: 0.6rem; padding-top: 0.8rem; border-top: 1px dashed var(--border-light); margin-top: auto; flex-wrap: wrap; }
 .result-footer .btn { padding: 0.4rem 0.9rem; font-size: 0.78rem; }
 
-/* Pathway icons — reused classes from career guidance page */
+/* Pathway icons - reused classes from career guidance page */
 .pw-icon { width: 46px; height: 46px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; }
 .pw-icon.engineering { background: #E0F2FE; color: #0369A1; }
 .pw-icon.ict { background: #EDE9FE; color: #6D28D9; }

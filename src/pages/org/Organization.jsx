@@ -393,7 +393,7 @@ function DocumentsTab({ org, toast }) {
             />
           </label>
           <label className="org-field">
-            <span className="org-field-label">File (PDF, images — max 10 MB)</span>
+            <span className="org-field-label">File (PDF, images - max 10 MB)</span>
             <input type="file" className="input" onChange={(e) => setFile(e.target.files[0])} />
           </label>
           <div className="org-modal-actions">
@@ -495,7 +495,7 @@ function MembersTab({ org, toast }) {
                       {m.user_name}
                     </span>
                   </td>
-                  <td className="small">{m.user_email || m.user_phone || "—"}</td>
+                  <td className="small">{m.user_email || m.user_phone || "-"}</td>
                   <td>
                     {isOfficer && m.is_active ? (
                       <select

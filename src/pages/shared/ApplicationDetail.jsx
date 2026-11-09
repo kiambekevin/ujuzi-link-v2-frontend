@@ -155,7 +155,7 @@ export default function ApplicationDetail() {
                   <div className="small bold"><i className="fas fa-calendar" style={{ marginRight: 8 }} />{fmtDate(iv.scheduled_at, true)}</div>
                   <div className="tiny muted">
                     {iv.mode_display || INTERVIEW_MODES.find(([v]) => v === iv.mode)?.[1] || iv.mode}
-                    {iv.location_or_link ? ` — ${iv.location_or_link}` : ""}
+                    {iv.location_or_link ? ` - ${iv.location_or_link}` : ""}
                   </div>
                 </div>
                 <div className="row">
@@ -196,7 +196,7 @@ function OfferCard({ app, isOrg, isApplicant, onOpenOffer, onReload }) {
   const respond = async (response) => {
     try {
       await api.post(`/applications/${app.id}/offer/respond/`, { response });
-      toast.success(response === "ACCEPT" ? "Offer accepted — congratulations!" : "Offer declined.");
+      toast.success(response === "ACCEPT" ? "Offer accepted - congratulations!" : "Offer declined.");
       onReload();
     } catch (err) {
       toast.error(errorMessage(err));
@@ -334,7 +334,7 @@ function OfferModal({ applicationId, onClose, onDone }) {
           <textarea className="textarea" style={{ minHeight: 70 }} value={form.terms} onChange={(e) => setForm((f) => ({ ...f, terms: e.target.value }))} placeholder="Duration, working hours, supervision arrangements…" />
         </div>
         <div className="field">
-          <label>Offer deadline (optional — defaults to 7 days)</label>
+          <label>Offer deadline (optional - defaults to 7 days)</label>
           <input className="input" type="datetime-local" value={form.deadline} onChange={(e) => setForm((f) => ({ ...f, deadline: e.target.value }))} />
         </div>
         <div className="row between">
@@ -381,7 +381,7 @@ function Messages({ applicationId }) {
     <div>
       <div style={{ maxHeight: 420, overflowY: "auto", display: "flex", flexDirection: "column", gap: 10 }}>
         {loading && <Spinner />}
-        {!loading && messages.length === 0 && <p className="small muted">Start the conversation — ask about start dates, supervision or anything else.</p>}
+        {!loading && messages.length === 0 && <p className="small muted">Start the conversation - ask about start dates, supervision or anything else.</p>}
         {messages.map((m) => (
           <div key={m.id} style={{ alignSelf: m.sender_role === "TRAINEE" ? "flex-end" : "flex-start", maxWidth: "85%" }}>
             <div

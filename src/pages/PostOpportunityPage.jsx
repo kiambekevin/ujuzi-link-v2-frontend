@@ -23,7 +23,7 @@ const OPPORTUNITY_TYPES = [
   { value: 'OTHER', label: 'Other approved work-based learning' },
 ]
 
-// Full CountyEnum from the API — the previous 7-item list would 400 on any
+// Full CountyEnum from the API - the previous 7-item list would 400 on any
 // other county.
 const COUNTIES = [
   'Baringo', 'Bomet', 'Bungoma', 'Busia', 'Elgeyo-Marakwet', 'Embu',
@@ -58,14 +58,14 @@ const DURATION_UNITS = [
 ]
 
 // Only these roles may open this page at all. NOTE: the backend currently
-// only accepts POST from ORG_OFFICER — see the guard in handleSubmit below.
+// only accepts POST from ORG_OFFICER - see the guard in handleSubmit below.
 const ALLOWED_ROLES = ['ORG_OFFICER', 'ORG_SUPERVISOR']
 
 export default function PostOpportunityPage() {
   const navigate = useNavigate()
   const { user, loading } = useAuth()
 
-  // Org capacity — fetched from /organizations/me/ so we don't lie to the user.
+  // Org capacity - fetched from /organizations/me/ so we don't lie to the user.
   const [org, setOrg] = useState(null)
   const [orgLoading, setOrgLoading] = useState(true)
   const [orgError, setOrgError] = useState(null)
@@ -475,7 +475,7 @@ export default function PostOpportunityPage() {
                 </div>
               </div>
 
-              {/* 2. Location & Worksite — work_mode is a single enum */}
+              {/* 2. Location & Worksite - work_mode is a single enum */}
               <div className="form-card">
                 <div className="form-card-header">
                   <h2><i className="fas fa-map-marker-alt"></i> Location & Worksite</h2>
@@ -540,7 +540,7 @@ export default function PostOpportunityPage() {
                 </div>
               </div>
 
-              {/* 3. Duration & Schedule — split into value + unit */}
+              {/* 3. Duration & Schedule - split into value + unit */}
               <div className="form-card">
                 <div className="form-card-header">
                   <h2><i className="fas fa-calendar-alt"></i> Duration & Schedule</h2>
@@ -629,7 +629,7 @@ export default function PostOpportunityPage() {
                 </div>
               </div>
 
-              {/* 4. Compensation — uppercase enum + numeric stipend */}
+              {/* 4. Compensation - uppercase enum + numeric stipend */}
               <div className="form-card">
                 <div className="form-card-header">
                   <h2><i className="fas fa-money-bill-wave"></i> Compensation</h2>
@@ -687,7 +687,7 @@ export default function PostOpportunityPage() {
                 </div>
               </div>
 
-              {/* 5. Requirements & Skills — backend uses `qualifications` and `skill_ids` */}
+              {/* 5. Requirements & Skills - backend uses `qualifications` and `skill_ids` */}
               <div className="form-card">
                 <div className="form-card-header">
                   <h2><i className="fas fa-graduation-cap"></i> Requirements & Skills</h2>
@@ -748,7 +748,7 @@ export default function PostOpportunityPage() {
                 </div>
               </div>
 
-              {/* 6. Application Process — codes, not labels */}
+              {/* 6. Application Process - codes, not labels */}
               <div className="form-card">
                 <div className="form-card-header">
                   <h2><i className="fas fa-file-signature"></i> Application Process</h2>

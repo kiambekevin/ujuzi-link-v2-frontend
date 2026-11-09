@@ -121,7 +121,7 @@ export default function Placements() {
                       <div className="plc-cell">
                         <Briefcase size={14} strokeWidth={2.25} />
                         <span className="plc-cell-text">
-                          {p.opportunity_title || "—"}
+                          {p.opportunity_title || "-"}
                         </span>
                       </div>
                     </td>
@@ -183,7 +183,7 @@ export default function Placements() {
                 <div className="plc-mobile-meta">
                   <div className="plc-mobile-meta-row">
                     <Briefcase size={14} strokeWidth={2.25} />
-                    {p.opportunity_title || "—"}
+                    {p.opportunity_title || "-"}
                   </div>
                   <div className="plc-mobile-meta-row">
                     <UserCog size={14} strokeWidth={2.25} />

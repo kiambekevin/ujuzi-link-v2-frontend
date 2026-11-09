@@ -33,7 +33,7 @@ export default function Passport() {
           <div>
             <h1 style={{ fontSize: "1.5rem", marginBottom: 6 }}><i className="fas fa-passport" style={{ marginRight: 10, color: "var(--accent-light)" }} />Digital Learning Passport</h1>
             <p style={{ color: "#e6d9f7", maxWidth: 560 }}>
-              A verified, shareable record of every placement you complete — your proof of skills for future employers.
+              A verified, shareable record of every placement you complete - your proof of skills for future employers.
             </p>
           </div>
           <span className="badge" style={{ background: "rgba(192,132,252,0.2)", color: "#d8b4fe" }}>
@@ -113,7 +113,7 @@ function ShareModal({ entry, onClose, onShared }) {
   const link = token ? `${window.location.origin}/passport/public/${token}` : null;
 
   return (
-    <Modal title={`Share record — ${entry.title}`} onClose={onClose}>
+    <Modal title={`Share record - ${entry.title}`} onClose={onClose}>
       {!token ? (
         <>
           <p className="small muted mb-16">
@@ -158,7 +158,7 @@ function CertificatesModal({ entry, onClose }) {
   const cert = data || null;
 
   return (
-    <Modal title={`Certificates — ${entry.title}`} onClose={onClose}>
+    <Modal title={`Certificates - ${entry.title}`} onClose={onClose}>
       {loading ? (
         <Spinner />
       ) : error || !cert ? (

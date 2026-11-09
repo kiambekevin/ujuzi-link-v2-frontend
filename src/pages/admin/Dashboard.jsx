@@ -324,7 +324,7 @@ export default function Dashboard() {
               </span>
               <span className="adm-rating">
                 <Star size={13} strokeWidth={2.25} fill="currentColor" />
-                {satisfaction ?? "—"} <span style={{ opacity: 0.6 }}>/ 5</span>
+                {satisfaction ?? "-"} <span style={{ opacity: 0.6 }}>/ 5</span>
               </span>
             </div>
           </div>

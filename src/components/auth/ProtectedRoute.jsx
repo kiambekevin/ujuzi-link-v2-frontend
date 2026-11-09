@@ -6,13 +6,13 @@ export default function ProtectedRoute({ children, requiredRole }) {
   const { isLoggedIn, user } = useAuth()
   const location = useLocation()
 
-  // 1) Not logged in — send to login, remembering where they wanted to go
+  // 1) Not logged in - send to login, remembering where they wanted to go
   if (!isLoggedIn) {
     const redirect = encodeURIComponent(location.pathname + location.search)
     return <Navigate to={`/login?redirect=${redirect}`} replace />
   }
 
-  // 2) Role gate — if the route requires a specific role and the user
+  // 2) Role gate - if the route requires a specific role and the user
   //    doesn't have it, send them to their own dashboard (not a dead end)
   if (requiredRole) {
     const roles = Array.isArray(requiredRole) ? requiredRole : [requiredRole]

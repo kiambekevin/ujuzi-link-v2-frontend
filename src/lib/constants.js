@@ -169,11 +169,11 @@ export function statusBadge(status) {
 
 export function labelFor(options, value) {
   const found = options.find(([v]) => v === value);
-  return found ? found[1] : value || "—";
+  return found ? found[1] : value || "-";
 }
 
 export function fmtDate(value, withTime = false) {
-  if (!value) return "—";
+  if (!value) return "-";
   const d = new Date(value);
   if (Number.isNaN(d.getTime())) return value;
   const opts = { day: "numeric", month: "short", year: "numeric" };

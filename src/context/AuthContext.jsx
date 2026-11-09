@@ -9,7 +9,7 @@ export function AuthProvider({ children }) {
 
   /**
    * Fetch `/auth/me/` and store the canonical user shape.
-   * Never sets `loading` here — only the initial mount does. Callers that
+   * Never sets `loading` here - only the initial mount does. Callers that
    * want a loading indicator can use their own local state.
    */
   const refreshMe = useCallback(async () => {
@@ -27,7 +27,7 @@ export function AuthProvider({ children }) {
     }
   }, []);
 
-  // Initial bootstrap — load the user once, then release `loading`.
+  // Initial bootstrap - load the user once, then release `loading`.
   useEffect(() => {
     let cancelled = false;
     refreshMe().finally(() => {
@@ -41,7 +41,7 @@ export function AuthProvider({ children }) {
   /**
    * Password / OTP-based login. Stores the token pair, then always fetches
    * `/auth/me/` so `user` is the canonical UserMeSerializer payload
-   * (data.user from /auth/token/ has a reduced shape — same fields, but
+   * (data.user from /auth/token/ has a reduced shape - same fields, but
    * pulling from /auth/me/ guarantees consistency with every other screen).
    */
   const login = useCallback(async (identifier, password) => {
@@ -97,7 +97,7 @@ export function AuthProvider({ children }) {
 
   /**
    * Shallow-merge update for the current user. Handy after a PATCH /profile/
-   * or when the wizard persists `first_name` / `last_name` — keeps the nav
+   * or when the wizard persists `first_name` / `last_name` - keeps the nav
    * and dashboard in sync without a second `/auth/me/` call.
    */
   const updateUser = useCallback((partial) => {

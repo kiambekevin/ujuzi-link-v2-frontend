@@ -11,7 +11,7 @@ const METHOD_TABS = [
   { key: 'phone', icon: 'fa-phone', label: 'Phone' }
 ]
 
-// Demo identities — pick one to sign in as. In production this would be
+// Demo identities - pick one to sign in as. In production this would be
 // resolved from the identifier + password.
 const DEMO_IDENTITIES = [
   {
@@ -249,7 +249,7 @@ export default function LoginForm({ onSwitchToRegister }) {
       {/* ===== Demo role selector ===== */}
       <div className="form-group demo-role-group">
         <label>
-          Demo — sign in as <span className="required">*</span>
+          Demo - sign in as <span className="required">*</span>
         </label>
         <div className="demo-role-grid" role="radiogroup" aria-label="Demo role">
           {DEMO_IDENTITIES.map((d) => (

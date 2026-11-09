@@ -70,7 +70,7 @@ export const LOGBOOK_ENTRIES = [
     dates: '15 – 21 Sep 2026',
     phase: 'Phase 2 · Core electrical installation',
     status: 'draft',
-    activities: ['Draft entry — activities not yet finalised.'],
+    activities: ['Draft entry - activities not yet finalised.'],
     hours: null,
     supervisor: 'Not assigned',
     evidenceCount: 0,

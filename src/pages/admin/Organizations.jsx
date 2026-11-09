@@ -80,14 +80,14 @@ const MODAL_COPY = {
     icon: Ban,
     confirm: "Suspend organisation",
     confirmClass: "btn-danger",
-    body: "This takes effect immediately — the organisation will not be able to advertise or manage placements until reinstated.",
+    body: "This takes effect immediately - the organisation will not be able to advertise or manage placements until reinstated.",
   },
   reinstate: {
     title: "Reinstate",
     icon: RotateCcw,
     confirm: "Reinstate organisation",
     confirmClass: "btn-primary",
-    body: "This takes effect immediately — the organisation will regain access to advertising and placement management.",
+    body: "This takes effect immediately - the organisation will regain access to advertising and placement management.",
   },
   verify: {
     title: "Verify organisation",
@@ -277,12 +277,12 @@ function OrgDrawer({ orgId, onClose, onOpenModal }) {
                   <DrawerRow
                     icon={Mail}
                     label="Email"
-                    value={org.email || "—"}
+                    value={org.email || "-"}
                   />
                   <DrawerRow
                     icon={Phone}
                     label="Phone"
-                    value={org.phone || "—"}
+                    value={org.phone || "-"}
                   />
                   {org.website && (
                     <DrawerRow
@@ -303,7 +303,7 @@ function OrgDrawer({ orgId, onClose, onOpenModal }) {
                   <DrawerRow
                     icon={MapPin}
                     label="Head office"
-                    value={org.county || "—"}
+                    value={org.county || "-"}
                   />
                 </div>
               </section>
@@ -420,7 +420,7 @@ function OrgDrawer({ orgId, onClose, onOpenModal }) {
                             Download
                           </a>
                         ) : (
-                          "—"
+                          "-"
                         )
                       }
                     />
@@ -909,7 +909,7 @@ export default function Organizations() {
                             {org.county}
                           </span>
                         ) : (
-                          <span className="aorg-cell is-muted">—</span>
+                          <span className="aorg-cell is-muted">-</span>
                         )}
                       </td>
                       <td>
@@ -922,7 +922,7 @@ export default function Organizations() {
                             {org.capacity}
                           </span>
                         ) : (
-                          <span className="aorg-cell is-muted">—</span>
+                          <span className="aorg-cell is-muted">-</span>
                         )}
                       </td>
                       <td onClick={(e) => e.stopPropagation()}>

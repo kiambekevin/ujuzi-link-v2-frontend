@@ -291,7 +291,7 @@ export default function StepEducation({
                     )}
                     {(e.start_date || e.end_date) && (
                       <div className="muted" style={{ fontSize: '0.85rem' }}>
-                        {yearOf(e.start_date) || '—'} – {yearOf(e.end_date) || '—'}
+                        {yearOf(e.start_date) || '-'} – {yearOf(e.end_date) || '-'}
                       </div>
                     )}
                   </div>

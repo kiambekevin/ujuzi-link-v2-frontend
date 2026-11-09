@@ -424,7 +424,7 @@ export const OPPORTUNITIES = [
     reports: 0,
     approvedOn: '2026-09-15',
     lastUpdated: '2026-10-12',
-    moderationNotes: 'Approved. High application volume — monitor response times.',
+    moderationNotes: 'Approved. High application volume - monitor response times.',
     flags: []
   },
   {
@@ -568,7 +568,7 @@ export const OPPORTUNITIES = [
     reports: 0,
     approvedOn: null,
     lastUpdated: '2026-10-15',
-    moderationNotes: 'Employer verification pending. Listing has rotating shifts — confirm trainee eligibility.',
+    moderationNotes: 'Employer verification pending. Listing has rotating shifts - confirm trainee eligibility.',
     flags: []
   },
   {
@@ -677,7 +677,7 @@ export const OPPORTUNITIES = [
     reports: 0,
     approvedOn: null,
     lastUpdated: '2026-10-14',
-    moderationNotes: 'Listing under review — new format of community service learning.',
+    moderationNotes: 'Listing under review - new format of community service learning.',
     flags: []
   },
   {
@@ -710,7 +710,7 @@ export const OPPORTUNITIES = [
     reports: 1,
     approvedOn: null,
     lastUpdated: '2026-10-02',
-    moderationNotes: 'Removed — employer application was rejected. Listing must be tied to a verified employer.',
+    moderationNotes: 'Removed - employer application was rejected. Listing must be tied to a verified employer.',
     flags: [
       {
         id: 'flag-opp-childfund-01',
@@ -744,7 +744,7 @@ export const OPPORTUNITIES = [
     paid: false,
     hours: 'Monday–Friday, 8:00am–4:30pm',
     description:
-      'Attachment offered by RVTTI for its own construction and civil engineering trainees — an in-house workplace-learning placement.',
+      'Attachment offered by RVTTI for its own construction and civil engineering trainees - an in-house workplace-learning placement.',
     requirements: [
       'Enrolled at RVTTI, TVET Level 5 or 6',
       'Completed pre-attachment training'
@@ -757,7 +757,7 @@ export const OPPORTUNITIES = [
     approvedOn: null,
     lastUpdated: '2026-10-13',
     moderationNotes:
-      'Auto-flagged: unpaid listing. Institution-hosted placements are permitted without stipend per policy — approve after confirming learning plan.',
+      'Auto-flagged: unpaid listing. Institution-hosted placements are permitted without stipend per policy - approve after confirming learning plan.',
     flags: [
       {
         id: 'flag-opp-rvtti-01',
@@ -839,7 +839,7 @@ export const OPPORTUNITIES = [
     reports: 0,
     approvedOn: '2026-10-01',
     lastUpdated: '2026-10-06',
-    moderationNotes: 'Paused — employer requested to update start date. Will resume once employer confirms.',
+    moderationNotes: 'Paused - employer requested to update start date. Will resume once employer confirms.',
     flags: []
   }
 ]

@@ -121,7 +121,7 @@ const ARTICLES_INTERVIEW = [
 const FAQS = [
   {
     q: 'How do I know which career pathway is right for me?',
-    a: 'Start by reflecting on what you enjoy doing, what subjects or tasks come naturally to you, and the working environment you prefer (indoor/outdoor, team/independent, hands-on/desk-based). Take our career self-assessment quiz, review labour-market demand, and speak to your institutional career adviser. Remember that career paths are rarely linear — many people start in one trade and specialise or transition later.'
+    a: 'Start by reflecting on what you enjoy doing, what subjects or tasks come naturally to you, and the working environment you prefer (indoor/outdoor, team/independent, hands-on/desk-based). Take our career self-assessment quiz, review labour-market demand, and speak to your institutional career adviser. Remember that career paths are rarely linear - many people start in one trade and specialise or transition later.'
   },
   {
     q: 'Does my TVET level limit the careers I can pursue?',
@@ -133,11 +133,11 @@ const FAQS = [
   },
   {
     q: 'Can I get a placement without prior work experience?',
-    a: 'Yes — placements are designed specifically for trainees who are building experience. Your institution verifies your enrolment and eligibility, and employers understand that you are learning. What matters is your attitude, willingness to learn, safety awareness and reliability. A strong CV and application, even without prior experience, can help you stand out.'
+    a: 'Yes - placements are designed specifically for trainees who are building experience. Your institution verifies your enrolment and eligibility, and employers understand that you are learning. What matters is your attitude, willingness to learn, safety awareness and reliability. A strong CV and application, even without prior experience, can help you stand out.'
   },
   {
     q: "What should I do if my placement doesn't go well?",
-    a: 'First, raise any concerns with your workplace supervisor or institutional supervisor as early as possible. Most issues — misunderstandings about tasks, communication problems or safety concerns — can be resolved quickly. If you feel unsafe or mistreated, report it through the Ujuzi Link platform or contact your institution immediately. No placement should compromise your safety or dignity.'
+    a: 'First, raise any concerns with your workplace supervisor or institutional supervisor as early as possible. Most issues - misunderstandings about tasks, communication problems or safety concerns - can be resolved quickly. If you feel unsafe or mistreated, report it through the Ujuzi Link platform or contact your institution immediately. No placement should compromise your safety or dignity.'
   }
 ]
 
@@ -224,7 +224,7 @@ export default function CareerGuidancePage() {
               <div className="section-head-left">
                 <div className="section-label">Occupational pathways</div>
                 <h2><i className="fas fa-route" aria-hidden="true"></i> Explore career pathways</h2>
-                <p>Understand where your TVET programme can take you — from entry-level roles to long-term career growth.</p>
+                <p>Understand where your TVET programme can take you - from entry-level roles to long-term career growth.</p>
               </div>
               <button
                 className="btn btn-outline btn-sm"

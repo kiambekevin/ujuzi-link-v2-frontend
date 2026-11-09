@@ -1,5 +1,5 @@
 /* ============================================================
-   Admin users module — Users.css
+   Admin users module - Users.css
    Scoped to .ausr-* classes. All colors use design tokens.
    ============================================================ */
 
@@ -51,7 +51,7 @@
 }
 
 /* ============================================================
-   Toolbar — labelled sections with pill groups + search
+   Toolbar - labelled sections with pill groups + search
    ============================================================ */
 .ausr-toolbar {
   display: flex;
@@ -176,7 +176,7 @@
   box-shadow: 0 0 0 3px rgba(216, 180, 254, 0.28);
 }
 
-/* Status pills have no dot — visually distinct from category filters. */
+/* Status pills have no dot - visually distinct from category filters. */
 .ausr-filter-group--status .ausr-filter {
   padding: 7px 13px;
 }

@@ -34,7 +34,7 @@ const pickList = (res) => {
 };
 
 function fmtDate(iso) {
-  if (!iso) return "—";
+  if (!iso) return "-";
   try {
     return new Date(iso).toLocaleDateString("en-GB", {
       day: "numeric",
@@ -49,15 +49,15 @@ function fmtDate(iso) {
 // Coerce anything the backend might send to a printable string.
 // Fixes: "Objects are not valid as a React child".
 function text(v) {
-  if (v == null) return "—";
-  if (typeof v === "string") return v || "—";
+  if (v == null) return "-";
+  if (typeof v === "string") return v || "-";
   if (typeof v === "number" || typeof v === "boolean") return String(v);
   if (Array.isArray(v)) {
-    const parts = v.map(text).filter((x) => x && x !== "—");
-    return parts.length ? parts.join(", ") : "—";
+    const parts = v.map(text).filter((x) => x && x !== "-");
+    return parts.length ? parts.join(", ") : "-";
   }
   if (typeof v === "object") {
-    return v.name ?? v.title ?? v.organization_name ?? v.label ?? v.code ?? "—";
+    return v.name ?? v.title ?? v.organization_name ?? v.label ?? v.code ?? "-";
   }
   return String(v);
 }
@@ -195,7 +195,7 @@ export default function TraineeDashboardPage() {
     const items = [];
     for (const a of applications.slice(0, 6)) {
       items.push({
-        title: `Applied for ${text(a.opportunity?.title) !== "—" ? a.opportunity.title : "opportunity"}`,
+        title: `Applied for ${text(a.opportunity?.title) !== "-" ? a.opportunity.title : "opportunity"}`,
         date: a.submitted_at,
         type: "primary",
       });
@@ -338,7 +338,7 @@ export default function TraineeDashboardPage() {
                   <div className="ph-meta">
                     <div className="ph-meta-item">
                       <i className="fas fa-user-tie" aria-hidden="true"></i>{" "}
-                      Supervisor: {text(activePlacement.supervisor_name) === "—" ? "Not assigned" : activePlacement.supervisor_name}
+                      Supervisor: {text(activePlacement.supervisor_name) === "-" ? "Not assigned" : activePlacement.supervisor_name}
                     </div>
                     <div className="ph-meta-item">
                       <i className="fas fa-calendar-check" aria-hidden="true"></i>{" "}
@@ -435,7 +435,7 @@ export default function TraineeDashboardPage() {
                     <p className="form-step-sub" style={{ margin: 0 }}>Loading recommendations…</p>
                   ) : recommendedOpps.length === 0 ? (
                     <p className="form-step-sub" style={{ margin: 0 }}>
-                      No recommendations yet — check back after you add skills and education.
+                      No recommendations yet - check back after you add skills and education.
                     </p>
                   ) : (
                     <div className="rec-list">
@@ -453,7 +453,7 @@ export default function TraineeDashboardPage() {
                                 ? rec.duration_display
                                 : rec.duration_value
                                   ? `${rec.duration_value} ${String(rec.duration_unit || "").toLowerCase()}`
-                                  : "—"}
+                                  : "-"}
                             </div>
                             {Array.isArray(rec.skills) && rec.skills.length > 0 && (
                               <div className="rec-tags">

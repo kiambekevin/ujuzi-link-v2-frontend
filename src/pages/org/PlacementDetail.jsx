@@ -933,7 +933,7 @@ function ActivitiesTab({ placement, tick, toast }) {
                     <td>{fmtDate(a.date)}</td>
                     <td>{a.activity}</td>
                     <td>{a.hours}</td>
-                    <td className="small">{a.recorded_by_name || "—"}</td>
+                    <td className="small">{a.recorded_by_name || "-"}</td>
                   </tr>
                 ))}
               </tbody>

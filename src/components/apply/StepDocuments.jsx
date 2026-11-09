@@ -38,7 +38,7 @@ function DocTypeGroup({
   cfg,
   required,
   docs,             // array of existing docs for this type
-  uploading,        // bool — a file is being uploaded for THIS type
+  uploading,        // bool - a file is being uploaded for THIS type
   onUpload,         // (file) => void
   onRemove,         // (id) => void | undefined
 }) {
@@ -180,7 +180,7 @@ export default function StepDocuments({
       </h2>
       <p className="form-step-sub">
         You can upload multiple files for any document type (e.g. two academic
-        certificates). Accepted formats: PDF, DOC/DOCX, JPG, PNG — max 5 MB each.
+        certificates). Accepted formats: PDF, DOC/DOCX, JPG, PNG - max 5 MB each.
         Everything you upload is saved to your profile and reused for future
         applications.
       </p>
@@ -247,7 +247,7 @@ export default function StepDocuments({
         </div>
         <div className="form-group">
           <label htmlFor="coverLetter">
-            Tell the employer why you&apos;re a good fit — a few sentences is fine.
+            Tell the employer why you&apos;re a good fit - a few sentences is fine.
           </label>
           <div className="input-wrapper">
             <i className="fas fa-align-left" aria-hidden="true"></i>

@@ -193,7 +193,7 @@ export default function OpportunityForm() {
               className="input"
               value={form.title}
               onChange={set("title")}
-              placeholder="e.g. Data Science Internship — Nairobi"
+              placeholder="e.g. Data Science Internship - Nairobi"
             />
           </div>
 

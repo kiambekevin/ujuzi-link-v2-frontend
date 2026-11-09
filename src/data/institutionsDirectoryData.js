@@ -177,7 +177,7 @@ export const DIRECTORY_INSTITUTIONS = [
     brandColor: '#7E22CE',
     registeredOn: '2023-04-11',
     lastUpdated: '2026-10-17',
-    notes: 'Batch trainee verification (18 items) pending — insurance documents under review.',
+    notes: 'Batch trainee verification (18 items) pending - insurance documents under review.',
     docs: [
       { name: 'TVETA accreditation certificate', status: 'verified' },
       { name: 'Certificate of registration', status: 'verified' },
@@ -250,7 +250,7 @@ export const DIRECTORY_INSTITUTIONS = [
     brandColor: '#854D0E',
     registeredOn: '2023-07-03',
     lastUpdated: '2026-10-12',
-    notes: 'Growing ICT programme. Agriculture placements seasonal — plan around harvest cycles.',
+    notes: 'Growing ICT programme. Agriculture placements seasonal - plan around harvest cycles.',
     docs: [
       { name: 'TVETA accreditation certificate', status: 'verified' },
       { name: 'Certificate of registration', status: 'verified' },
@@ -357,7 +357,7 @@ export const DIRECTORY_INSTITUTIONS = [
     brandColor: '#065F46',
     registeredOn: '2024-01-22',
     lastUpdated: '2026-10-16',
-    notes: 'Provisional TVETA accreditation expires Nov 2026 — renewal application expected.',
+    notes: 'Provisional TVETA accreditation expires Nov 2026 - renewal application expected.',
     docs: [
       { name: 'TVETA provisional accreditation', status: 'verified' },
       { name: 'Certificate of registration', status: 'verified' },
@@ -533,7 +533,7 @@ export const DIRECTORY_INSTITUTIONS = [
     brandColor: '#9D174D',
     registeredOn: '2024-02-18',
     lastUpdated: '2026-09-28',
-    notes: 'Application rejected — TVETA provisional accreditation lapsed. Institution may reapply after renewal.',
+    notes: 'Application rejected - TVETA provisional accreditation lapsed. Institution may reapply after renewal.',
     docs: [
       { name: 'TVETA accreditation certificate', status: 'missing' },
       { name: 'Certificate of registration', status: 'verified' },
@@ -747,7 +747,7 @@ export const DIRECTORY_INSTITUTIONS = [
     brandColor: '#065F46',
     registeredOn: '2024-03-07',
     lastUpdated: '2026-10-14',
-    notes: 'New institution. Provisional TVETA accreditation expires Oct 2026 — renewal pending.',
+    notes: 'New institution. Provisional TVETA accreditation expires Oct 2026 - renewal pending.',
     docs: [
       { name: 'TVETA provisional accreditation', status: 'verified' },
       { name: 'Certificate of registration', status: 'verified' },

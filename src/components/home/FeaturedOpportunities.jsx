@@ -58,7 +58,7 @@ function fmtDeadline(value) {
 
 function fmtDuration(opp) {
   if (opp.duration_display) return opp.duration_display;
-  if (!opp.duration_value || !opp.duration_unit) return "—";
+  if (!opp.duration_value || !opp.duration_unit) return "-";
   const unit =
     opp.duration_unit === "WEEKS"
       ? opp.duration_value === 1
@@ -87,7 +87,7 @@ function toCardModel(opp) {
   const skillList = normaliseSkills(opp.skills);
 
   // `organization` is a dict { id, name, verified, org_type } from the
-  // serializer — but tolerate a plain string just in case.
+  // serializer - but tolerate a plain string just in case.
   const employer =
     (typeof opp.organization === "string" && opp.organization) ||
     opp.organization?.name ||
@@ -99,7 +99,7 @@ function toCardModel(opp) {
     employer,
     location: opp.county || opp.location || "Kenya",
     duration: fmtDuration(opp),
-    qualification: skillList[0] || "—",
+    qualification: skillList[0] || "-",
     deadline: opp.closing_date
       ? `Closes ${fmtDeadline(opp.closing_date)}`
       : "Open",
@@ -124,7 +124,7 @@ async function fetchFeatured(signal) {
   });
   const path = `/opportunities/?${params.toString()}`;
 
-  // 1. Authenticated attempt — only if a token exists.
+  // 1. Authenticated attempt - only if a token exists.
   if (typeof getAccess === "function" && getAccess()) {
     try {
       const { data } = await api.get(path, { signal });
@@ -135,7 +135,7 @@ async function fetchFeatured(signal) {
     }
   }
 
-  // 2. Anonymous attempt via the api client with `skipAuth` — avoids
+  // 2. Anonymous attempt via the api client with `skipAuth` - avoids
   //    duplicating base-url / interceptor logic.
   if (typeof api.get === "function") {
     try {

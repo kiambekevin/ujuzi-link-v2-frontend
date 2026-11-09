@@ -14,7 +14,7 @@ const DOC_LABELS = {
 };
 
 // Coerce anything the API might return to a printable string.
-function text(v, fallback = "—") {
+function text(v, fallback = "-") {
   if (v == null) return fallback;
   if (typeof v === "string") return v || fallback;
   if (typeof v === "number" || typeof v === "boolean") return String(v);
@@ -37,27 +37,27 @@ function orgName(opp) {
 }
 
 function durationLabel(opp) {
-  if (!opp) return "—";
+  if (!opp) return "-";
   if (opp.duration_display) return opp.duration_display;
   if (opp.duration_value) {
     const unit = String(opp.duration_unit || "").toLowerCase();
     return `${opp.duration_value} ${unit}${opp.duration_value === 1 ? "" : "s"}`;
   }
-  return "—";
+  return "-";
 }
 
 function compensationLabel(opp) {
-  if (!opp) return "—";
+  if (!opp) return "-";
   if (opp.compensation === "UNPAID") return "Unpaid";
   if (opp.stipend_amount) return `${opp.compensation_display || "Paid"} · KES ${opp.stipend_amount}`;
   if (opp.compensation_display) return opp.compensation_display;
   if (opp.compensation === "STIPEND") return "Stipend provided";
   if (opp.compensation === "PAID") return "Paid";
-  return "—";
+  return "-";
 }
 
 function deadlineLabel(iso) {
-  if (!iso) return "—";
+  if (!iso) return "-";
   try {
     const d = new Date(`${iso}`.length === 10 ? `${iso}T23:59:59` : iso);
     if (Number.isNaN(d.getTime())) return iso;
@@ -68,10 +68,10 @@ function deadlineLabel(iso) {
 }
 
 function locationLabel(opp) {
-  if (!opp) return "—";
+  if (!opp) return "-";
   const bits = [opp.county, opp.location || opp.worksite].filter(Boolean);
   if (opp.work_mode === "REMOTE") bits.push("Remote");
-  return bits.length ? bits.join(" · ") : "—";
+  return bits.length ? bits.join(" · ") : "-";
 }
 
 export default function OpportunityDrawer({ opportunity, onClose }) {
@@ -103,7 +103,7 @@ export default function OpportunityDrawer({ opportunity, onClose }) {
     return () => document.removeEventListener("keydown", onKey);
   }, [opportunity, onClose]);
 
-  // Very light focus trap — keeps Tab inside the drawer while open.
+  // Very light focus trap - keeps Tab inside the drawer while open.
   useEffect(() => {
     if (!opportunity) return;
     const node = drawerRef.current;
@@ -202,7 +202,7 @@ export default function OpportunityDrawer({ opportunity, onClose }) {
             )}
           </div>
 
-          {/* Status strip — quick context */}
+          {/* Status strip - quick context */}
           <div
             className="drawer-status-strip"
             style={{
