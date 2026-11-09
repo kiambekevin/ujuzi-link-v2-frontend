@@ -1,0 +1,565 @@
+/* ============================================================
+   Placement detail module styles
+   Scoped to .pld-* classes
+   ============================================================ */
+
+/* ---------- Header ---------- */
+.pld-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.pld-header-main h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  line-height: 1.25;
+  color: var(--text-dark);
+}
+
+.pld-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.pld-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.pld-meta-item svg { color: var(--accent-dark); flex-shrink: 0; }
+
+.pld-meta-sep {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--border-light);
+}
+
+/* ---------- Tabs ---------- */
+.pld-tabs {
+  display: flex;
+  gap: 4px;
+  border-bottom: 1.5px solid var(--border-light);
+  margin: 16px 0 20px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.pld-tabs::-webkit-scrollbar { display: none; }
+
+.pld-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 11px 16px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  border-bottom: 2.5px solid transparent;
+  white-space: nowrap;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.pld-tab:hover { color: var(--primary); }
+
+.pld-tab.active {
+  color: var(--primary-dark);
+  border-bottom-color: var(--accent-dark);
+}
+
+.pld-tab-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: var(--primary-dark);
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.pld-tab.active .pld-tab-count {
+  background: linear-gradient(135deg, var(--primary), var(--accent-dark));
+  color: #fff;
+}
+
+/* ---------- Tab body ---------- */
+.pld-tab-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ---------- Section card ---------- */
+.pld-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 22px;
+}
+
+.pld-card-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed var(--border-light);
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.pld-card-head-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pld-card-head-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-soft);
+  color: var(--primary-dark);
+  flex-shrink: 0;
+}
+
+.pld-card-head h4 {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text-dark);
+}
+
+.pld-card-sub {
+  margin: 0 0 16px;
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+/* ---------- Detail grid ---------- */
+.pld-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+}
+
+.pld-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pld-detail-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.pld-detail-label svg { color: var(--accent-dark); flex-shrink: 0; }
+
+.pld-detail-value {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.pld-detail-value.is-muted {
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+/* ---------- Action row ---------- */
+.pld-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  padding-top: 16px;
+  margin-top: 16px;
+  border-top: 1px dashed var(--border-light);
+}
+
+.pld-actions .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pld-actions .btn.is-danger {
+  color: var(--danger);
+  border-color: rgba(185, 28, 28, 0.25);
+}
+
+.pld-actions .btn.is-danger:hover:not(:disabled) {
+  background: var(--danger-bg);
+  border-color: var(--danger);
+}
+
+/* ---------- Learning plans ---------- */
+.pld-plan-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.pld-plan-head h4 {
+  margin: 0;
+  font-size: 1.02rem;
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pld-plan-desc {
+  margin: 0 0 14px;
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+.pld-objectives {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pld-objective {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  background: var(--soft-bg);
+  border: 1px solid transparent;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.pld-objective:hover {
+  border-color: var(--border-light);
+  background: #fff;
+}
+
+.pld-objective-main { flex: 1; min-width: 0; }
+
+.pld-objective-desc {
+  font-size: 0.88rem;
+  color: var(--text-dark);
+  line-height: 1.45;
+}
+
+.pld-objective-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  margin-top: 3px;
+}
+
+.pld-objective-meta svg { color: var(--accent-dark); }
+
+.pld-objective-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 6px;
+}
+
+.pld-skill-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: var(--primary-dark);
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.pld-skill-pill svg { color: var(--accent-dark); }
+
+.pld-status-select {
+  padding: 6px 10px;
+  border-radius: 9px;
+  border: 1.5px solid var(--border-light);
+  background: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  transition: border-color 0.15s;
+  flex-shrink: 0;
+}
+
+.pld-status-select:focus {
+  outline: none;
+  border-color: var(--accent-dark);
+  box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.12);
+}
+
+.pld-empty-inline {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin: 4px 0 0;
+}
+
+/* ---------- Chip groups ---------- */
+.pld-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pld-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 13px;
+  border-radius: 999px;
+  border: 1.5px solid var(--border-light);
+  background: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: all 0.15s ease;
+}
+
+.pld-chip:hover {
+  border-color: var(--accent);
+  color: var(--primary-dark);
+}
+
+.pld-chip.is-on {
+  background: linear-gradient(135deg, var(--primary), var(--accent-dark));
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 4px 10px rgba(75, 0, 130, 0.18);
+}
+
+.pld-chip.is-on svg { color: var(--accent-light); }
+
+/* ---------- Rating picker ---------- */
+.pld-rating {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.pld-star {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1.5px solid var(--border-light);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  transition: all 0.15s ease;
+}
+
+.pld-star:hover {
+  border-color: var(--accent);
+  color: var(--accent-dark);
+}
+
+.pld-star.is-on {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  border-color: #f59e0b;
+  color: #b45309;
+}
+
+/* ---------- Activity row grid ---------- */
+.pld-activity-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.pld-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pld-field-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.pld-field-label .req { color: var(--danger); margin-left: 2px; }
+
+/* ---------- Review / assessment cards ---------- */
+.pld-review {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pld-review-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.pld-review-author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pld-review-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.76rem;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary-light), var(--accent-dark));
+  flex-shrink: 0;
+}
+
+.pld-review-name {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.pld-review-time {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  margin-top: 1px;
+}
+
+.pld-stars-display {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.pld-review-body {
+  font-size: 0.88rem;
+  color: var(--text-dark);
+  line-height: 1.55;
+  white-space: pre-wrap;
+  margin: 0;
+}
+
+/* ---------- Assessment skill rating row ---------- */
+.pld-skill-rate-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background: var(--soft-bg);
+  border-radius: var(--radius-sm);
+}
+
+.pld-skill-rate-name {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  min-width: 120px;
+}
+
+/* ---------- Assessment summary pills ---------- */
+.pld-skill-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.pld-skill-summary-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: var(--primary-dark);
+  font-size: 0.76rem;
+  font-weight: 600;
+}
+
+/* ---------- Completion ---------- */
+.pld-completion-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 11px;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.pld-completion-badge.is-verified {
+  background: linear-gradient(135deg, var(--primary-soft), #f3e8ff);
+  color: var(--primary-dark);
+}
+
+.pld-completion-badge.is-pending {
+  background: var(--warning-bg);
+  color: var(--warning);
+}
+
+/* ---------- Modal actions ---------- */
+.pld-modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 640px) {
+  .pld-header-main h2 { font-size: 1.3rem; }
+  .pld-card { padding: 16px; }
+  .pld-objective { flex-direction: column; align-items: stretch; }
+  .pld-status-select { width: 100%; }
+  .pld-tab { padding: 10px 12px; font-size: 0.82rem; }
+}

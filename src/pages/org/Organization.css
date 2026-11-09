@@ -1,0 +1,349 @@
+/* ============================================================
+   Organisation module styles
+   Scoped to .org-* classes
+   ============================================================ */
+
+/* ---------- Header ---------- */
+.org-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.org-header-main h2 {
+  margin: 0;
+  font-size: 1.65rem;
+  line-height: 1.2;
+  color: var(--text-dark);
+}
+
+.org-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.org-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.org-meta-item svg {
+  color: var(--accent-dark);
+  flex-shrink: 0;
+}
+
+.org-meta-sep {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--border-light);
+}
+
+.org-verified {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 11px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--primary-soft), #f3e8ff);
+  color: var(--primary-dark);
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.org-verified svg {
+  color: var(--accent-dark);
+}
+
+/* ---------- Tabs (module-local, keeps global Tabs intact) ---------- */
+.org-tabs {
+  display: flex;
+  gap: 6px;
+  border-bottom: 1.5px solid var(--border-light);
+  margin-bottom: 20px;
+  overflow-x: auto;
+}
+
+.org-tab {
+  padding: 11px 18px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  border-bottom: 2.5px solid transparent;
+  white-space: nowrap;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.org-tab:hover {
+  color: var(--primary);
+}
+
+.org-tab.active {
+  color: var(--primary-dark);
+  border-bottom-color: var(--accent-dark);
+}
+
+/* ---------- Section card ---------- */
+.org-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 24px;
+}
+
+.org-card + .org-card {
+  margin-top: 16px;
+}
+
+.org-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.org-card-head h4 {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.org-card-head h4 svg {
+  color: var(--accent-dark);
+  flex-shrink: 0;
+}
+
+.org-card-sub {
+  margin: 4px 0 0;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+/* ---------- Form fields ---------- */
+.org-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.org-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.org-field:last-child {
+  margin-bottom: 0;
+}
+
+.org-field-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  letter-spacing: 0.01em;
+}
+
+.org-field-full {
+  grid-column: 1 / -1;
+}
+
+/* ---------- Sector chips ---------- */
+.org-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.org-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 15px;
+  border-radius: 999px;
+  border: 1.5px solid var(--border-light);
+  background: #fff;
+  font-size: 0.83rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: all 0.15s ease;
+}
+
+.org-chip:hover {
+  border-color: var(--accent);
+  color: var(--primary-dark);
+}
+
+.org-chip.is-on {
+  background: linear-gradient(135deg, var(--primary), var(--accent-dark));
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 6px 14px rgba(75, 0, 130, 0.2);
+}
+
+.org-chip.is-on svg {
+  color: var(--accent-light);
+}
+
+/* ---------- Read-only overview (supervisor view) ---------- */
+.org-overview-desc {
+  font-size: 0.92rem;
+  color: var(--text-dark);
+  line-height: 1.6;
+  margin: 0 0 16px;
+}
+
+.org-overview-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--border-light);
+}
+
+.org-overview-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.org-overview-row svg {
+  color: var(--accent-dark);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.org-readonly-note {
+  margin-top: 16px;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  background: var(--primary-soft);
+  color: var(--primary-dark);
+  font-size: 0.82rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ---------- Table action buttons ---------- */
+.org-td-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.org-icon-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  border: 1.5px solid var(--border-light);
+  background: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  transition: all 0.15s ease;
+}
+
+.org-icon-btn:hover {
+  border-color: var(--accent-light);
+  color: var(--primary-dark);
+  background: var(--primary-soft);
+}
+
+.org-icon-btn.is-danger:hover {
+  border-color: rgba(185, 28, 28, 0.3);
+  color: var(--danger);
+  background: var(--danger-bg);
+}
+
+/* ---------- Empty state ---------- */
+.org-empty {
+  text-align: center;
+  padding: 44px 24px;
+  color: var(--text-muted);
+}
+
+.org-empty svg {
+  color: var(--accent-light);
+  margin-bottom: 10px;
+}
+
+.org-empty h5 {
+  margin: 0 0 4px;
+  color: var(--text-dark);
+  font-size: 0.98rem;
+}
+
+.org-empty p {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+/* ---------- Role select inline ---------- */
+.org-role-select {
+  padding: 7px 10px;
+  border-radius: 9px;
+  border: 1.5px solid var(--border-light);
+  background: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  transition: border-color 0.15s;
+}
+
+.org-role-select:focus {
+  outline: none;
+  border-color: var(--accent-dark);
+  box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.12);
+}
+
+/* ---------- Save bar ---------- */
+.org-save-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--border-light);
+}
+
+/* ---------- Modal helper text ---------- */
+.org-modal-note {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin: 4px 0 16px;
+  line-height: 1.5;
+}
+
+.org-modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+@media (max-width: 640px) {
+  .org-header-main h2 { font-size: 1.35rem; }
+  .org-card { padding: 18px; }
+}

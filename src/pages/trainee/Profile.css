@@ -1,0 +1,593 @@
+/* ============================================================
+   Trainee profile module — scoped to .tpf-*
+   ============================================================ */
+
+/* ---------- Page header / hero ---------- */
+.tpf-hero {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  padding: 26px 28px 22px;
+  margin-bottom: 20px;
+  background:
+    radial-gradient(circle at 85% -20%, rgba(192, 132, 252, 0.5), transparent 55%),
+    linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 55%, var(--accent-dark) 100%);
+  color: #fff;
+  box-shadow: var(--shadow-md);
+}
+
+.tpf-hero::after {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(216, 180, 254, 0.3), transparent 65%);
+  filter: blur(8px);
+  pointer-events: none;
+}
+
+.tpf-hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.tpf-hero-identity {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+}
+
+.tpf-hero-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.18);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  flex-shrink: 0;
+}
+
+.tpf-hero-text h1 {
+  margin: 0 0 4px;
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.tpf-hero-text p {
+  margin: 0;
+  font-size: 0.86rem;
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tpf-hero-text p svg {
+  color: var(--accent-light);
+}
+
+.tpf-hero-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 180px;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  backdrop-filter: blur(6px);
+}
+
+.tpf-hero-progress-label {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.tpf-hero-progress-value {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.tpf-hero-progress-bar {
+  position: relative;
+  height: 5px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.22);
+  overflow: hidden;
+}
+
+.tpf-hero-progress-fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent-light), var(--accent));
+  transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ---------- Tabs ---------- */
+.tpf-tabs {
+  display: flex;
+  gap: 4px;
+  border-bottom: 1.5px solid var(--border-light);
+  margin-bottom: 20px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.tpf-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.tpf-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 11px 16px;
+  font-weight: 600;
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  border-bottom: 2.5px solid transparent;
+  white-space: nowrap;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.tpf-tab:hover { color: var(--primary); }
+
+.tpf-tab.active {
+  color: var(--primary-dark);
+  border-bottom-color: var(--accent-dark);
+}
+
+.tpf-tab svg {
+  flex-shrink: 0;
+  opacity: 0.8;
+}
+
+.tpf-tab.active svg {
+  color: var(--accent-dark);
+  opacity: 1;
+}
+
+/* ---------- Card ---------- */
+.tpf-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 22px;
+  margin-bottom: 16px;
+}
+
+.tpf-card-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px dashed var(--border-light);
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.tpf-card-head-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tpf-card-head-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-soft);
+  color: var(--primary-dark);
+  flex-shrink: 0;
+}
+
+.tpf-card-head h3 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+/* ---------- Form grid ---------- */
+.tpf-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.tpf-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.tpf-field:last-child { margin-bottom: 0; }
+
+.tpf-field-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.tpf-field-label .req { color: var(--danger); margin-left: 2px; }
+
+.tpf-field-hint {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* ---------- Chip groups ---------- */
+.tpf-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tpf-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 13px;
+  border-radius: 999px;
+  border: 1.5px solid var(--border-light);
+  background: #fff;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: all 0.15s ease;
+}
+
+.tpf-chip:hover {
+  border-color: var(--accent);
+  color: var(--primary-dark);
+  background: var(--primary-soft);
+}
+
+.tpf-chip.is-on {
+  background: linear-gradient(135deg, var(--primary), var(--accent-dark));
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 4px 12px rgba(75, 0, 130, 0.24);
+}
+
+.tpf-chip.is-on svg {
+  color: var(--accent-light);
+}
+
+/* ---------- Action bar ---------- */
+.tpf-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--border-light);
+}
+
+.tpf-actions .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ---------- Skills display ---------- */
+.tpf-skill-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tpf-skill-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  background: #fbf9fe;
+  border: 1px solid var(--border-light);
+  transition: border-color 0.15s ease;
+}
+
+.tpf-skill-item:hover {
+  border-color: var(--accent-light);
+}
+
+.tpf-skill-body { flex: 1; min-width: 0; }
+
+.tpf-skill-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  line-height: 1.3;
+}
+
+.tpf-skill-meta {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.tpf-dots {
+  display: inline-flex;
+  gap: 3px;
+  margin-right: 10px;
+}
+
+.tpf-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border-light);
+}
+
+.tpf-dot.is-on { background: var(--accent-dark); }
+
+/* ---------- List items (education, experience, certs, docs) ---------- */
+.tpf-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.tpf-list-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.tpf-list-item:last-child { border-bottom: none; }
+.tpf-list-item:first-child { padding-top: 0; }
+
+.tpf-item-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-soft);
+  color: var(--primary-dark);
+  flex-shrink: 0;
+}
+
+.tpf-item-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.tpf-item-title {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--text-dark);
+  line-height: 1.35;
+}
+
+.tpf-item-sub {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.tpf-item-actions {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.tpf-icon-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  border: 1.5px solid var(--border-light);
+  background: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  transition: all 0.15s ease;
+}
+
+.tpf-icon-btn:hover {
+  border-color: var(--accent-light);
+  color: var(--primary-dark);
+  background: var(--primary-soft);
+}
+
+.tpf-icon-btn.is-danger:hover {
+  border-color: rgba(185, 28, 28, 0.3);
+  color: var(--danger);
+  background: var(--danger-bg);
+}
+
+/* ---------- Empty inline ---------- */
+.tpf-empty-inline {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 14px 0;
+  text-align: center;
+}
+
+/* ---------- Consent banner ---------- */
+.tpf-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  background: var(--warning-bg);
+  color: var(--warning);
+  border: 1px solid rgba(146, 64, 14, 0.18);
+  font-size: 0.84rem;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.tpf-consent svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ---------- Notification channel matrix ---------- */
+.tpf-channel-matrix {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.tpf-channel-matrix thead th {
+  text-align: left;
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  padding: 10px 12px;
+  border-bottom: 1.5px solid var(--border-light);
+  background: #fbf9fe;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.tpf-channel-matrix thead th:not(:first-child) { text-align: center; }
+
+.tpf-channel-matrix tbody td {
+  padding: 11px 12px;
+  border-bottom: 1px solid var(--border-light);
+  vertical-align: middle;
+}
+
+.tpf-channel-matrix tbody tr:last-child td { border-bottom: none; }
+.tpf-channel-matrix tbody tr:hover { background: #faf7ff; }
+
+.tpf-channel-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.tpf-channel-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-width: 58px;
+  padding: 5px 12px;
+  border-radius: 8px;
+  border: 1.5px solid var(--border-light);
+  background: #fff;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  transition: all 0.15s ease;
+}
+
+.tpf-channel-toggle:hover {
+  border-color: var(--accent);
+  color: var(--primary-dark);
+}
+
+.tpf-channel-toggle.is-on {
+  background: linear-gradient(135deg, var(--primary), var(--accent-dark));
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 4px 10px -2px rgba(75, 0, 130, 0.32);
+}
+
+/* ---------- File upload area ---------- */
+.tpf-file-zone {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  border: 1.5px dashed var(--border-light);
+  background: #fbf9fe;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.tpf-file-zone:hover {
+  border-color: var(--accent);
+  background: var(--primary-soft);
+}
+
+.tpf-file-zone input[type="file"] {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.tpf-file-zone-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  color: var(--accent-dark);
+  flex-shrink: 0;
+  border: 1px solid var(--border-light);
+}
+
+.tpf-file-zone-text strong { color: var(--text-dark); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 640px) {
+  .tpf-hero { padding: 20px; }
+  .tpf-hero-inner { flex-direction: column; align-items: stretch; }
+  .tpf-hero-progress { min-width: 0; width: 100%; }
+  .tpf-card { padding: 16px; }
+  .tpf-grid { grid-template-columns: 1fr; }
+  .tpf-actions .btn { flex: 1; justify-content: center; }
+  .tpf-list-item { flex-direction: column; align-items: flex-start; }
+  .tpf-item-actions { align-self: flex-end; }
+  .tpf-channel-matrix thead th:nth-child(n + 4),
+  .tpf-channel-matrix tbody td:nth-child(n + 4) { display: none; }
+}

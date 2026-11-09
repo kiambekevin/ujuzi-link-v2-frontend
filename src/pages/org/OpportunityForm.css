@@ -1,0 +1,271 @@
+/* ============================================================
+   Opportunity form module styles
+   Scoped to .opform-* classes
+   ============================================================ */
+
+/* ---------- Header ---------- */
+.opform-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.opform-header h2 {
+  margin: 0;
+  font-size: 1.65rem;
+  line-height: 1.2;
+  color: var(--text-dark);
+}
+
+.opform-header-sub {
+  margin: 6px 0 0;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  max-width: 640px;
+  line-height: 1.55;
+}
+
+.opform-header-sub strong {
+  color: var(--primary-dark);
+}
+
+/* ---------- Error banner ---------- */
+.opform-error {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  background: var(--danger-bg);
+  color: var(--danger);
+  border: 1px solid rgba(185, 28, 28, 0.18);
+  font-size: 0.88rem;
+  font-weight: 500;
+  margin: 16px 0;
+  animation: opformSlideDown 0.25s ease;
+}
+
+.opform-error svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+@keyframes opformSlideDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Section cards ---------- */
+.opform-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.opform-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 24px;
+}
+
+.opform-card-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px dashed var(--border-light);
+}
+
+.opform-card-head-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-soft);
+  color: var(--primary-dark);
+  flex-shrink: 0;
+}
+
+.opform-card-head h4 {
+  margin: 0;
+  font-size: 1.02rem;
+  color: var(--text-dark);
+}
+
+.opform-card-head p {
+  margin: 2px 0 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* ---------- Form grid ---------- */
+.opform-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.opform-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.opform-field:last-child {
+  margin-bottom: 0;
+}
+
+.opform-field--full {
+  grid-column: 1 / -1;
+}
+
+.opform-field-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  letter-spacing: 0.01em;
+}
+
+.opform-field-label .req {
+  color: var(--danger);
+  margin-left: 2px;
+}
+
+.opform-field-hint {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* ---------- Chip groups ---------- */
+.opform-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.opform-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1.5px solid var(--border-light);
+  background: #fff;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: all 0.15s ease;
+}
+
+.opform-chip:hover {
+  border-color: var(--accent);
+  color: var(--primary-dark);
+}
+
+.opform-chip.is-on {
+  background: linear-gradient(135deg, var(--primary), var(--accent-dark));
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 6px 14px rgba(75, 0, 130, 0.2);
+}
+
+.opform-chip.is-on svg {
+  color: var(--accent-light);
+}
+
+/* ---------- Checkbox ---------- */
+.opform-checkbox-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  border: 1.5px dashed var(--border-light);
+  background: #fbf9fe;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.opform-checkbox-row:hover {
+  border-color: var(--accent-light);
+  background: var(--primary-soft);
+}
+
+.opform-checkbox-row input {
+  width: 17px;
+  height: 17px;
+  margin-top: 2px;
+  accent-color: var(--accent-dark);
+  flex-shrink: 0;
+}
+
+.opform-checkbox-text {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.opform-checkbox-text strong {
+  display: block;
+  color: var(--text-dark);
+  font-size: 0.9rem;
+  margin-bottom: 1px;
+}
+
+/* ---------- Sticky save bar ---------- */
+.opform-save-bar {
+  position: sticky;
+  bottom: 16px;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-md);
+  margin-top: 20px;
+}
+
+.opform-save-bar .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.opform-save-note {
+  margin-right: auto;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.opform-save-note svg {
+  color: var(--accent-dark);
+  flex-shrink: 0;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 640px) {
+  .opform-header h2 { font-size: 1.35rem; }
+  .opform-card { padding: 18px; }
+  .opform-save-note { display: none; }
+  .opform-save-bar { justify-content: stretch; }
+  .opform-save-bar .btn { flex: 1; justify-content: center; }
+}

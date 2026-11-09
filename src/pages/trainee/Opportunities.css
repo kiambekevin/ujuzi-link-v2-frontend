@@ -1,0 +1,280 @@
+/* ============================================================
+   Trainee opportunities module styles — scoped to .tro-*
+   ============================================================ */
+
+/* ---------- Filter panel ---------- */
+.tro-panel {
+  background: linear-gradient(180deg, #ffffff 0%, #fbf9fe 100%);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 20px 22px;
+  margin-bottom: 20px;
+}
+
+.tro-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.tro-search {
+  position: relative;
+  flex: 1 1 300px;
+  min-width: 220px;
+}
+
+.tro-search svg {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+  transition: color 0.15s ease;
+}
+
+.tro-search:focus-within svg {
+  color: var(--accent-dark);
+}
+
+.tro-search input {
+  width: 100%;
+  padding: 11px 14px 11px 42px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border-light);
+  background: #fff;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.tro-search input::placeholder { color: var(--text-muted); opacity: 0.7; }
+
+.tro-search input:focus {
+  outline: none;
+  border-color: var(--accent-dark);
+  box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.12);
+}
+
+.tro-select {
+  flex: 0 1 170px;
+  min-width: 140px;
+  padding: 11px 34px 11px 14px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border-light);
+  background: #fff
+    url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%235b4b6e' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E")
+    no-repeat right 12px center;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  appearance: none;
+  cursor: pointer;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.tro-select:hover { border-color: var(--accent-light); }
+
+.tro-select:focus {
+  outline: none;
+  border-color: var(--accent-dark);
+  box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.12);
+}
+
+.tro-submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 11px 22px;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, var(--primary), var(--accent-dark));
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border: none;
+  box-shadow: 0 8px 18px -6px rgba(75, 0, 130, 0.4);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  white-space: nowrap;
+}
+
+.tro-submit:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 22px -6px rgba(75, 0, 130, 0.45);
+}
+
+.tro-reset {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 11px 16px;
+  border-radius: var(--radius-sm);
+  background: #fff;
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.88rem;
+  border: 1.5px solid var(--border-light);
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.tro-reset:hover {
+  border-color: var(--accent);
+  color: var(--primary-dark);
+  background: var(--primary-soft);
+}
+
+/* ---------- Quick filter chips ---------- */
+.tro-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--border-light);
+}
+
+.tro-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1.5px solid var(--border-light);
+  background: #fff;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.tro-chip svg {
+  flex-shrink: 0;
+  opacity: 0.8;
+}
+
+.tro-chip:hover {
+  border-color: var(--accent);
+  color: var(--primary-dark);
+  background: var(--primary-soft);
+}
+
+.tro-chip.active {
+  background: linear-gradient(135deg, var(--primary), var(--accent-dark));
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 6px 14px -4px rgba(75, 0, 130, 0.32);
+}
+
+.tro-chip.active svg {
+  color: var(--accent-light);
+  opacity: 1;
+}
+
+/* ---------- Results header ---------- */
+.tro-results-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.tro-count {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.tro-count strong {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  color: var(--text-dark);
+  font-size: 0.98rem;
+}
+
+.tro-active-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.tro-active-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: var(--primary-dark);
+  font-size: 0.74rem;
+  font-weight: 600;
+}
+
+.tro-active-tag button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: inherit;
+  display: inline-flex;
+  align-items: center;
+  opacity: 0.7;
+}
+
+.tro-active-tag button:hover {
+  opacity: 1;
+}
+
+/* ---------- Results list ---------- */
+.tro-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ---------- Skeleton ---------- */
+.tro-skeleton {
+  background: var(--card-bg);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tro-skeleton-bar {
+  height: 12px;
+  border-radius: 6px;
+  background: linear-gradient(
+    90deg,
+    var(--primary-soft) 25%,
+    #f7f2fc 50%,
+    var(--primary-soft) 75%
+  );
+  background-size: 200% 100%;
+  animation: troShimmer 1.3s infinite;
+}
+
+@keyframes troShimmer {
+  to { background-position: -200% 0; }
+}
+
+.tro-skeleton-bar.is-wide { width: 60%; }
+.tro-skeleton-bar.is-mid { width: 40%; }
+.tro-skeleton-bar.is-short { width: 25%; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 720px) {
+  .tro-panel { padding: 14px; }
+  .tro-form { gap: 8px; }
+  .tro-search { flex: 1 1 100%; }
+  .tro-select { flex: 1 1 calc(50% - 4px); }
+  .tro-submit, .tro-reset { flex: 1 1 calc(50% - 4px); justify-content: center; }
+}

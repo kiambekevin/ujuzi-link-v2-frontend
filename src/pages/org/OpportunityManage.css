@@ -1,0 +1,449 @@
+/* ============================================================
+   Opportunity manage module styles
+   Scoped to .opm-* classes
+   ============================================================ */
+
+/* ---------- Header ---------- */
+.opm-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.opm-header-main h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  line-height: 1.25;
+  color: var(--text-dark);
+}
+
+.opm-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.opm-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.opm-meta-item svg {
+  color: var(--accent-dark);
+  flex-shrink: 0;
+}
+
+.opm-meta-sep {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--border-light);
+}
+
+.opm-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.opm-header-actions .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ---------- Rejection banner ---------- */
+.opm-reject {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  background: var(--danger-bg);
+  color: var(--danger);
+  border: 1px solid rgba(185, 28, 28, 0.18);
+  font-size: 0.88rem;
+  margin-bottom: 18px;
+  animation: opmSlide 0.25s ease;
+}
+
+.opm-reject strong { display: block; margin-bottom: 2px; }
+
+.opm-reject svg { flex-shrink: 0; margin-top: 1px; }
+
+@keyframes opmSlide {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Overview grid ---------- */
+.opm-overview {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.opm-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 22px;
+}
+
+.opm-card-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed var(--border-light);
+}
+
+.opm-card-head-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-soft);
+  color: var(--primary-dark);
+  flex-shrink: 0;
+}
+
+.opm-card-head h4 {
+  margin: 0;
+  font-size: 0.98rem;
+  color: var(--text-dark);
+}
+
+/* ---------- Description ---------- */
+.opm-description {
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  line-height: 1.6;
+  white-space: pre-wrap;
+  margin: 0 0 18px;
+}
+
+/* ---------- Detail rows ---------- */
+.opm-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+  padding: 14px 0;
+  border-top: 1px dashed var(--border-light);
+}
+
+.opm-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.opm-detail-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.opm-detail-label svg {
+  color: var(--accent-dark);
+  flex-shrink: 0;
+}
+
+.opm-detail-value {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.opm-detail-value.is-muted {
+  font-weight: 500;
+  color: var(--text-muted);
+  font-size: 0.86rem;
+}
+
+/* ---------- Skills / eligibility ---------- */
+.opm-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.opm-skill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 11px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: var(--primary-dark);
+  font-size: 0.76rem;
+  font-weight: 600;
+}
+
+.opm-skill svg {
+  color: var(--accent-dark);
+}
+
+.opm-eligibility {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  background: #fbf9fe;
+  border: 1px solid var(--border-light);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.opm-eligibility strong {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--text-dark);
+  margin-bottom: 3px;
+  font-size: 0.84rem;
+}
+
+.opm-eligibility strong svg {
+  color: var(--accent-dark);
+}
+
+/* ---------- Lifecycle card ---------- */
+.opm-lifecycle {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.opm-lifecycle-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.opm-lifecycle-actions .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.opm-lifecycle-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--warning-bg);
+  color: var(--warning);
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+.opm-lifecycle-note svg { flex-shrink: 0; margin-top: 1px; }
+
+.opm-lifecycle-note.is-closed {
+  background: #f1f1f4;
+  color: #55505f;
+}
+
+/* ---------- Applications card ---------- */
+.opm-apps-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 0;
+  overflow: hidden;
+}
+
+.opm-apps-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding: 18px 22px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.opm-apps-head h4 {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.opm-apps-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 7px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: var(--primary-dark);
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.opm-apps-filter {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.opm-apps-filter svg {
+  position: absolute;
+  left: 11px;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.opm-apps-filter select {
+  appearance: none;
+  padding: 8px 32px 8px 34px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border-light);
+  background: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  transition: border-color 0.15s;
+}
+
+.opm-apps-filter select:focus {
+  outline: none;
+  border-color: var(--accent-dark);
+  box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.12);
+}
+
+/* ---------- Applications table ---------- */
+.opm-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.opm-table thead th {
+  text-align: left;
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  padding: 12px 22px;
+  background: #fbf9fe;
+  border-bottom: 1.5px solid var(--border-light);
+  font-weight: 700;
+}
+
+.opm-table tbody td {
+  padding: 13px 22px;
+  border-bottom: 1px solid var(--border-light);
+  vertical-align: middle;
+}
+
+.opm-table tbody tr:last-child td { border-bottom: none; }
+
+.opm-table tbody tr { transition: background 0.12s ease; }
+.opm-table tbody tr:hover { background: #faf7ff; }
+
+.opm-applicant {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.opm-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.76rem;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary-light), var(--accent-dark));
+  flex-shrink: 0;
+}
+
+.opm-applicant-name {
+  font-weight: 600;
+  color: var(--text-dark);
+  line-height: 1.3;
+}
+
+.opm-applicant-id {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.opm-date {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-muted);
+  font-size: 0.84rem;
+  white-space: nowrap;
+}
+
+.opm-date svg { color: var(--accent-dark); flex-shrink: 0; }
+
+.opm-review-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.opm-review-btn svg { transition: transform 0.15s ease; }
+.opm-review-btn:hover svg { transform: translateX(2px); }
+
+/* ---------- Extend modal ---------- */
+.opm-modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 6px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .opm-overview { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .opm-header-main h2 { font-size: 1.3rem; }
+  .opm-card { padding: 16px; }
+  .opm-apps-head { padding: 14px 16px; }
+  .opm-table thead th,
+  .opm-table tbody td { padding: 10px 14px; }
+  .opm-apps-filter { width: 100%; }
+  .opm-apps-filter select { width: 100%; }
+}

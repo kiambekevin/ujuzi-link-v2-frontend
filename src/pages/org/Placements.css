@@ -1,0 +1,271 @@
+/* ============================================================
+   Placements module styles
+   Scoped to .plc-* classes
+   ============================================================ */
+
+/* ---------- Header ---------- */
+.plc-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.plc-header h2 {
+  margin: 0;
+  font-size: 1.65rem;
+  line-height: 1.2;
+  color: var(--text-dark);
+}
+
+.plc-header-sub {
+  margin: 4px 0 0;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+/* ---------- Filter bar ---------- */
+.plc-filters {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  padding: 12px 14px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.plc-filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1.5px solid var(--border-light);
+  background: #fff;
+  font-size: 0.83rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.plc-filter:hover {
+  border-color: var(--accent);
+  color: var(--primary-dark);
+}
+
+.plc-filter.active {
+  background: linear-gradient(135deg, var(--primary), var(--accent-dark));
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 6px 14px rgba(75, 0, 130, 0.22);
+}
+
+.plc-filter-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.7;
+}
+
+.plc-filter.active .plc-filter-dot {
+  opacity: 1;
+  background: var(--accent-light);
+}
+
+/* ---------- Table shell ---------- */
+.plc-table-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.plc-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.plc-table thead th {
+  text-align: left;
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  padding: 14px 20px;
+  background: #fbf9fe;
+  border-bottom: 1.5px solid var(--border-light);
+  font-weight: 700;
+}
+
+.plc-table tbody td {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border-light);
+  vertical-align: middle;
+}
+
+.plc-table tbody tr:last-child td { border-bottom: none; }
+
+.plc-table tbody tr { transition: background 0.12s ease; }
+.plc-table tbody tr:hover { background: #faf7ff; }
+
+/* ---------- Participant cell ---------- */
+.plc-participant {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.plc-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.82rem;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary-light), var(--accent-dark));
+  flex-shrink: 0;
+}
+
+.plc-participant-info { min-width: 0; }
+
+.plc-participant-name {
+  font-weight: 600;
+  color: var(--text-dark);
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.plc-participant-id {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.plc-participant-id svg { color: var(--accent-dark); }
+
+/* ---------- Opportunity / supervisor cells ---------- */
+.plc-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  color: var(--text-dark);
+}
+
+.plc-cell svg {
+  color: var(--accent-dark);
+  flex-shrink: 0;
+}
+
+.plc-cell-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 240px;
+}
+
+.plc-cell.is-muted { color: var(--text-muted); }
+
+.plc-cell.is-muted svg { color: var(--text-muted); opacity: 0.7; }
+
+/* ---------- Period cell ---------- */
+.plc-period {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-muted);
+  font-size: 0.84rem;
+  white-space: nowrap;
+}
+
+.plc-period svg { color: var(--accent-dark); flex-shrink: 0; }
+
+/* ---------- Action ---------- */
+.plc-action { display: flex; justify-content: flex-end; }
+
+.plc-manage-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.plc-manage-btn svg { transition: transform 0.15s ease; }
+.plc-manage-btn:hover svg { transform: translateX(2px); }
+
+/* ---------- Mobile cards ---------- */
+.plc-mobile-list {
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.plc-mobile-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.plc-mobile-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.plc-mobile-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 0.84rem;
+  color: var(--text-muted);
+}
+
+.plc-mobile-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.plc-mobile-meta-row svg {
+  color: var(--accent-dark);
+  flex-shrink: 0;
+}
+
+.plc-mobile-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 10px;
+  border-top: 1px dashed var(--border-light);
+}
+
+/* ---------- Responsive switch ---------- */
+@media (max-width: 820px) {
+  .plc-table-card { display: none; }
+  .plc-mobile-list { display: flex; }
+  .plc-header h2 { font-size: 1.35rem; }
+}
